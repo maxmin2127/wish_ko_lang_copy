@@ -1,0 +1,144 @@
+@import '../additionals/setup.scss';
+
+// .content {
+//     padding: 1rem;
+// }
+
+.bg {
+    // filter: blur(3px);
+    // filter: brightness(80%);
+    // filter: blur(2px);
+    // filter: blur(50px);
+    // filter: blur(10px);
+}
+
+#OPENGIFTING_PAGE {
+    @include flexBox(column, center, center);
+    // padding: 1rem;
+    // border: $border2;
+    // padding: 0.5rem 0;
+
+    .header {
+        // @include glass;
+        @include flexBox(column, center, center);
+        min-height: 40vh;
+        overflow: hidden;
+        opacity: 90%;
+        // border-radius: 20px;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        // opacity: 90%;
+        background-image: url("../../images/static_images/kids.jpg");
+        // background-image: url("https://www.shutterstock.com/image-photo/group-children-running-park-happy-600nw-2156594721.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-blend-mode: lighten;
+        background-blend-mode: darken;
+        width: 100%;
+        padding: 1rem 1rem;
+        background-position: center top;
+        background: linear-gradient(rgba(65, 64, 64, 0.5), rgba(0, 0, 0, 0.5)), url("https://www.shutterstock.com/image-photo/group-children-running-park-happy-600nw-2156594721.jpg"); 
+        // @include glass;
+        h1 {
+            color: white;
+            font-family: $heading;
+            font-size: 3rem;
+            width: 70vw;
+            max-width: 900px;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        .searchBar {
+            @include inputBox;
+            padding: 1rem 2rem;
+            width: 35vw;
+            border-radius: 100px;
+            opacity: 85%;
+            transition: 0.4s;
+            border: none;
+            gap: 1rem;
+            &:hover {
+                opacity: 100%;
+                width: 40vw;
+            }
+        }
+    }
+
+    .organizations {
+        // padding: 1rem 3rem;
+        width: 94%;
+        margin: 2rem 0;
+        max-width: 1250px;
+        .title {
+            font-family: $heading;
+            font-size: 2.3rem;
+            padding: 1rem 2rem;
+        }
+
+        .organization_list {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 3rem;
+            row-gap: 2rem;
+            padding: 2rem 2rem;
+
+            @include tablet {
+                grid-template-columns: repeat(1, 1fr);
+                height: 100%;
+            }
+            .item {
+                @include glass;
+                @include shrinkUponHover;
+                @include flexBox(row, flex-start, flex-start);
+                padding: 0.5rem 0.7rem;
+                gap: 1rem;
+                max-height: 50rem;
+                // border: $border2;
+
+                @include semi {
+                    @include flexBox(column, flex-start, flex-start);
+                }
+
+                img {
+                    width: 15rem;
+                    // height: 10rem;
+                    height: 100%;
+                    max-height: 12rem;
+                    height: 12rem;
+                    @include glass;
+
+                    @include semi {
+                        width: 100%;
+                        max-height: 15rem;
+                        height: 17rem;
+                    }
+                }    
+                .description {
+                    width: 60%;
+                    height: 100%;
+
+                    @include semi {
+                        width: 100%;
+                        // max-height: 15rem;
+                    }
+
+                    h1 {
+                        font-size: 1.5rem;
+                        margin: 1rem 0;
+                    }
+
+                    p {
+                        font-size: 0.9rem;
+                        text-align: justify;
+
+                        @include ellipsisText(3);
+                    }
+                }
+            }
+            
+        }
+    }
+
+}

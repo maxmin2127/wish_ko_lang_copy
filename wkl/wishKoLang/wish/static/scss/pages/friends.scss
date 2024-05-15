@@ -1,0 +1,147 @@
+// .organization_list {
+//     width: 100%;
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     column-gap: 3rem;
+//     row-gap: 2rem;
+//     padding: 2rem 2rem;
+//     .item {
+//         @include glass;
+//         @include flexBox(row, flex-start, flex-start);
+//         padding: 0.5rem 0.7rem;
+//         gap: 1rem;
+//         img {
+//             width: 15rem;
+//             height: 10rem;
+//             @include glass;
+//         }    
+//         .description {
+//             width: 60%;
+//             height: 100%;
+//             h1 {
+//                 font-size: 1.5rem;
+//                 margin: 1rem 0;
+//             }
+
+//             p {
+//                 font-size: 0.9rem;
+//                 text-align: justify;
+
+//                 overflow: ellipsis;
+//             }
+//         }
+//     }
+    
+// }
+
+@import "../additionals/setup.scss";
+
+
+#FRIENDS_PAGE {
+    @include flexBox(column, center, center);
+    padding: 1rem 2rem;
+    .page_content {
+        width: 90%;
+        max-width: 65rem;
+        .header {
+            font-family: $heading;
+            font-size: 2.6rem;
+            margin: 1rem;
+        }
+    }
+
+    .your_friends {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+        row-gap: 2rem;
+        padding: 2rem 2rem;
+        overflow-y: scroll;
+        max-height: 50vh;
+        .item {
+            @include glass;
+            @include flexBox(row, flex-start, center);
+            padding: 0.5rem 0.7rem;
+            gap: 1rem;
+            img {
+                width: 4rem;
+                height: 4rem;
+                @include glass;
+            }    
+            .description {
+                width: 60%;
+                height: 100%;
+                h1 {
+                    font-size: 1.3rem;
+                    margin: 1rem 0;
+                }
+    
+                p {
+                    font-size: 0.9rem;
+                    text-align: justify;
+    
+                    overflow: ellipsis;
+                }
+            }
+        }
+        
+    }
+
+
+    .explore_new_friends {
+            // border: $border;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            row-gap: 3rem;
+            padding: 3rem 2rem;
+            column-gap: 3rem;
+            .item {
+                @include glass;
+                @include flexBox(column, center, center);
+                padding: 2rem 1rem;
+                gap: 1rem;
+                background-color: white;
+                opacity: 100%;
+                // border: 2px solid #00000080;
+                // border: 1px solid var(--lavender);
+                // max-width: ;
+                img {
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 100%;
+                    outline: 5px solid var(--violet);
+                    outline-offset: 5px;
+                }
+                .description {
+                    @include flexBox(column, flex-start, center);
+                    gap: 1rem;
+                    margin-bottom: 1rem;
+                    h1 {
+                        font-family: $heading;
+                        text-align: center;
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        font-family: $ordinary;
+                        text-align: justify;
+                        font-size: 0.95rem;
+                    }
+                }
+                .checkWishlistButton {
+                    @include button(var(--violet), var(--violet), white);
+                    font-family: $heading;
+                    font-weight: 800;
+                    opacity: 100%;
+                    font-size: 1rem;
+                    padding: 0.6rem;
+                    width: 100%;
+                    i {
+                        color: white;
+                        margin: 0 5px;
+                    }
+                }
+            }
+    }
+}

@@ -1,0 +1,178 @@
+@import '../../additionals/setup.scss';
+
+.flex {
+    display: flex;
+}
+
+.flex_col {
+    display: flex;
+    flex-direction: column
+}
+
+#GROUP_PAGE {
+    @include flexBox(column, flex-start, center);
+    padding: 2rem 0;
+    min-height: 100vh;
+    width: 100%;
+
+    .group_container {
+        @include glass;
+        // border: 3px solid var(--dark-1);
+        background-color: white;
+        width: 90%;
+        max-width: 60rem;
+        padding: 2rem 3rem;
+
+        .header {
+            @include flexBox(row, space-between, center);
+            width: 100%;
+
+            .roulette {
+                @include button;
+                font-family: $heading;
+                font-weight: 600;
+                font-size: 1rem;
+            }
+        }
+        .details {
+            padding: 2rem 2rem;
+            @include flexBox(column);
+            gap: 1rem;
+        }
+    }
+    
+}
+
+#GROUP_PAGE .wishlist {
+    justify-content: center;
+    .line {
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        
+
+        button {
+            @include button(transparent, var(--dark-1), var(--dark-1));
+            font-family: $heading;
+        }
+    }
+
+    .wishlist_box {
+        background-color: white;
+        padding: 1.4rem 1rem;
+        margin: 1rem 0;
+        .wishlist_header {
+            @include flexBox(row, space-between,center);
+            .wishlist_owner {
+
+            }
+    
+            button {
+                @include button;
+            }
+        }
+
+        .wishlist_list {
+            padding: 1rem 0;
+            gap: 0.7rem;
+            .wishlist_item {
+                @include flexBox(row, space-between);
+                padding: 1rem 1.5rem;
+                box-shadow: $shadow-5;
+                border-radius: 5px;
+
+                
+                .left {
+                    i {
+                        margin-right: 1.5rem;
+                    }
+                    p {
+
+                    }
+                }
+                
+                i {
+                    
+                }
+            }
+        }
+        
+    }
+
+}
+
+#GROUP_PAGE .members {
+    padding: 1.4rem 1rem;
+    margin: 1rem 0;
+    .member_header {
+        @include flexBox(row, space-between, flex-end);
+
+        .title {
+            font-family: $heading;
+            font-size: 2.1rem;
+            font-weight: 700;
+        }
+        .status {
+            font-size: 0.9rem;
+        }
+    }
+
+    .members_list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 1rem;
+        row-gap: 1rem;
+        margin: 1rem 0;
+        .member {
+            @include flexBox(column, center, center);
+            padding: 1rem;
+            justify-content: center;
+            gap: 1rem;
+
+            img {
+                border-radius: 4px;
+            }
+            .description {
+                .name {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+
+.searchBar {
+    @include inputBox;
+    @include flexBox(row, space-between, center);
+    border-radius: 100px;
+    padding: 0;
+    padding-left: 1rem;
+    overflow: hidden;
+    position: relative;
+    input {
+        padding: 0.5rem;
+    }
+    .button_wrapper {
+        // border: 1px solid black;
+        background-color: var(--dark-1);
+        opacity: 90%;
+        height: 100%;
+        padding: 0.5rem 1.4rem;
+        @include flexBox(row, center, center);
+        i {
+            color: white;
+            margin-right: 0.3rem;
+        }
+
+        button {
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-family: $heading;
+            font-weight: 600;
+        }
+    }
+}

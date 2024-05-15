@@ -1,0 +1,92 @@
+
+{% extends '../../layout.html' %}
+
+{% load sass_tags static %}
+
+{% block title %}Create Group{% endblock %}
+
+{% block css %}
+<link href="{% sass_src 'scss/subpages/secretSanta/runRoulette.scss' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+
+
+{% block body %}
+    <div id="RUNROULETTE_PAGE" class="flex_col">
+
+        <div class="page_content">
+
+        <div class="header flex">
+            <h1>Aldub Nation</h1>
+            <button class="returnButton">
+                <i class="fas fa-angle-left"></i>
+                Return to Group
+            </button>
+        </div>
+
+        <div class="roulette_svg">
+
+        </div>
+        <!-- <img src="{% static 'images/svgs/roulette_00001.svg' %}" class="roulette_svg" width="100" height="100"> -->
+
+        <section class="randomizer">
+            <h1>Maxine, you've drawn...</h1>
+
+            <div class="images flex">
+                <div class="card user">
+                    <img src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="">
+                    <h3 class="name">Maxine Nicole</h3>
+                </div>
+
+                
+
+                <div class="card receiver">
+                    <img src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="">
+                    <h3 class="name">Evan Bellen</h3>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="wishlist">
+            <div class="wishlist_box">
+                <div class="wishlist_header flex">
+                    <h1 class="wishlist_owner">Evann's Wishlist</h1>
+                </div>
+                <section class="wishlist_list flex_col">
+                    <div class="wishlist_item">
+                        <div class="left flex">
+                            <i class="fas fa-gift"></i>
+                            <p>Phone</p>
+                        </div>
+                        <i class="fas fa-xmark"></i>
+                    </div>
+                    <div class="wishlist_item">
+                        <div class="left flex">
+                            <i class="fas fa-gift"></i>
+                            <p>Phone</p>
+                        </div>
+                        <i class="fas fa-xmark"></i>
+                    </div>
+                    <div class="wishlist_item">
+                        <div class="left flex">
+                            <i class="fas fa-gift"></i>
+                            <p>Phone</p>
+                        </div>
+                        <i class="fas fa-xmark"></i>
+                    </div>
+                    <div class="wishlist_item">
+                        <div class="left flex">
+                            <i class="fas fa-gift"></i>
+                            <p>Phone</p>
+                        </div>
+                        <i class="fas fa-xmark"></i>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends '../../layout.html' %}
+
+{% load sass_tags static %}
+
+{% block title %}Login{% endblock %}
+
+{% block css %}
+<link href="{% sass_src 'scss/subpages/Initials/login.scss' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <div id="LOGIN_PAGE">
+        <div class="login_container">
+            <h1>Login</h1>
+
+            <!-- <div class="input_form">
+                <div class="input_container">
+                    <label for="">Username</label>
+                    <div class="input_box">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username">
+                    </div>
+                </div>
+                <div class="input_container">
+                    <label for="">Password</label>
+                    <div class="input_box">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="bottom">
+                <button class="login_button">Login</button>
+                <div class="signup">No account yet? Signup <a href="">here</a></div>
+            </div> -->
+
+            <form action="" class="input_form">
+                <div class="input_container">
+                    <label for="">Username</label>
+                    <div class="input_box">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username">
+                    </div>
+                </div>
+
+                <div class="input_container">
+                    <label for="">Password</label>
+                    <div class="input_box">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+                </div>
+
+                <div class="bottom">
+                    <button class="login_button">Login</button>
+                    <div class="signup">
+                        No account yet? Signup <a href="{% url 'signup' %}">here</a>
+                    </div>
+                </div>
+            </form>
+            
+
+
+        </div>
+    </div>
+{% endblock %}

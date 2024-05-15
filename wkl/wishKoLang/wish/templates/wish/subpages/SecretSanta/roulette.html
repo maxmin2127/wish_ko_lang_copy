@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette</title>
+    <style>
+        :root {
+            --sunshine: #FFE59B;
+            --pinky-peach: #FDC7C5;
+            --sky: #C4DEEF;
+            --minty: #92FDCB;
+            --grass: #BDFF9D;
+            --rosy: #ED9595;
+            --lavender: #9787AB;
+            --orange: #FF804D;
+            --ocean: #A0A5C6;
+            --violet: #7F7FD5;
+        }
+
+        body {
+            display: flex;
+            /* background-color: lightblue; */
+            background-color: transparent;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            border: 12px solid white;
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            position: relative;
+        }
+
+        .lines {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid black; */
+            height: 100%;
+            position: relative;
+            border-radius: 100%;
+            /* overflow: hidden; */
+        }
+
+        .line {
+            height: 12px;
+            width: 350px;
+            position: absolute;
+            top: 150px;
+            left: -30px;
+            background-color: white;
+            /* border: 5px solid white; */
+        }
+
+        .one {
+            rotate: 45deg;
+        }
+        .two {
+            rotate: -45deg;
+        }
+        .three {
+            rotate: 0deg;
+        }
+        .four {
+            rotate: 90deg;
+        }
+
+        /* .circles {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+        }
+        .circle {
+            width: 30px;
+            height: 30px;
+            border: 3px solid white;
+            
+            border-radius: 100%;
+            z-index: 100;
+            position: absolute;
+        }
+*/
+
+        .circle {
+            width: 30px;
+            height: 30px;
+            border: 7px solid white;
+            
+            border-radius: 100%;
+            z-index: 100;
+            position: absolute;
+        }
+        
+
+
+        
+/* 
+    :root {
+            --sunshine: #FFE59B;
+            --pinky-peach: #FDC7C5;
+            --sky: #C4DEEF;
+            --minty: #92FDCB;
+            --grass: #BDFF9D;
+            --rosy: #ED9595;
+            --lavender: #9787AB;
+            --orange: #FF804D;
+            --ocean: #A0A5C6;
+            --violet: #7F7FD5;
+        }
+*/
+        
+
+    </style>
+
+    
+</head>
+<body>
+    <div class="container">
+        
+            
+            <!-- <div class="circle c_two"></div>
+            <div class="circle c_three"></div>
+            <div class="circle c_four"></div>
+            <div class="circle c_five"></div>
+            <div class="circle c_six"></div>
+            <div class="circle c_seven"></div>
+            <div class="circle c_eight"></div> -->
+        
+        <div class="lines">
+
+            <div class="one line">
+            </div>
+            <div class="line two"></div>
+            <div class="line three"></div>
+            <div class="line four"></div>
+            
+        </div>
+    </div>
+
+
+</body>
+</html>

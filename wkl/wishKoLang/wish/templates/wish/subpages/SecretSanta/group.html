@@ -1,0 +1,118 @@
+{% extends '../../layout.html' %}
+
+{% load sass_tags static %}
+
+{% block title %}Group{% endblock %}
+
+{% block css %}
+<link href="{% sass_src 'scss/subpages/secretSanta/group.scss' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+
+{% block body %}
+    <div id="GROUP_PAGE">
+        <div class="group_container SWIPETOP">
+        <div class="header flex">
+            <h1>Aldub Nation</h1>
+            <button class="roulette">Roulette</button>
+        </div>
+
+        <section class="details flex_col">
+            <div class="detail_wrapper">
+                <label for="">Admin</label>
+                <h4>Maxine Nicole B. Bernales</h4>
+            </div>
+            <div class="detail_wrapper">
+                <label for="">Event</label>
+                <h4>Christmas Party</h4>
+            </div>
+            <div class="detail_wrapper">
+                <label for="">Price Range</label>
+                <h4>50 - 500</h4>
+            </div>
+        </section>
+
+        <section class="wishlist">
+            <div class="line flex">
+                <p>You've drawn Miguel Andre</p>
+                <button class="showWishlist">View their Wishlist</button>
+            </div>
+            <div class="wishlist_box">
+                <div class="wishlist_header flex">
+                    <h1 class="wishlist_owner">Your Wishlist</h1>
+                    <!-- <button class="flex">
+                        <i class="fas fa-plus"></i>
+                        Add
+                    </button> -->
+                    <div class="searchBar">
+                        <input type="text" placeholder="Enter item">
+                        <!-- <i class="fas fa-search"></i> -->
+                        <div class="button_wrapper">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <section class="wishlist_list flex_col">
+                    <div class="wishlist_item">
+                        <div class="left flex">
+                            <i class="fas fa-gift"></i>
+                            <p>Phone</p>
+                        </div>
+                        <i class="fas fa-xmark"></i>
+                    </div>
+                    <div class="wishlist_item">
+                        <div class="left flex">
+                            <i class="fas fa-gift"></i>
+                            <p>Phone</p>
+                        </div>
+                        <i class="fas fa-xmark"></i>
+                    </div>
+                    <div class="wishlist_item">
+                        <div class="left flex">
+                            <i class="fas fa-gift"></i>
+                            <p>Phone</p>
+                        </div>
+                        <i class="fas fa-xmark"></i>
+                    </div>
+                    <div class="wishlist_item">
+                        <div class="left flex">
+                            <i class="fas fa-gift"></i>
+                            <p>Phone</p>
+                        </div>
+                        <i class="fas fa-xmark"></i>
+                    </div>
+                    
+                </section>
+            </div>
+        </section>
+
+        <section class="members">
+            <div class="member_header flex">
+                <div class="title">Members</div>
+                <p class="status">9 people have not drawn</p>
+            </div>
+            <div class="members_list">
+                <div class="member">
+                    <img src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="" width="100" height="100">
+                    <div class="description">
+                        <div class="name">Maxine Nicole B. Bernales</div>
+                    </div>
+                </div>
+                <div class="member">
+                    <img src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="" width="100" height="100">
+                    <div class="description">
+                        <div class="name">Maxine Nicole B. Bernales</div>
+                    </div>
+                </div>
+                <div class="member">
+                    <img src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="" width="100" height="100">
+                    <div class="description">
+                        <div class="name">Maxine Nicole B. Bernales</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    </div>
+{% endblock %}

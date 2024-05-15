@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dosis:wght@200..800&family=Inter:wght@100..900&family=Kalam:wght@300;400;700&family=Kanit:wght@600&family=Karla:wght@600&family=Kumbh+Sans&family=Lacquer&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300..700&family=Press+Start+2P&family=Roboto&family=Roboto+Slab:wght@700&family=Rock+Salt&family=Rowdies:wght@300;400;700&family=Rubik&family=Rubik+Bubbles&family=Rubik+Doodle+Shadow&family=Syne:wght@400..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+:root {
+  --gray-1: #9F9B9B;
+  --gray-2: #D9D9D9;
+  --dark-1: #333439;
+  --dark-2: #737479;
+  --dark-3: #4C4940;
+  --gold: #E99B26;
+  --peachy: #FFC6BF;
+  --orange: #FF804D;
+  --sunshine: #FFE59B;
+  --pinky-peach: #FDC7C5;
+  --sky: #C4DEEF;
+  --minty: #92FDCB;
+  --grass: #BDFF9D;
+  --rosy: #ED9595;
+  --lavender: #9787AB;
+  --bg-dirty-white: #FFF8EE;
+  --ocean: #A0A5C6;
+  --violet: #7F7FD5;
+  --dark-violet: #4d50a7;
+  --dark-violet-2: #525370;
+  --light-bg:rgba(207, 203, 203, 0.356);
+  --opaque-dark: #33343990; }
+
+@font-face {
+  font-family: "Power Grotesk";
+  src: url("../../font/PowerGrotesk-Regular.ttf"); }
+
+@font-face {
+  font-family: Power Grotesk;
+  src: url("../../font/PowerGrotesk-Regular.ttf"); }
+
+/* TRANSITIONS:
+- FADEIN
+- TOPSWING
+- spread
+*/
+@-webkit-keyframes FADEIN {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes FADEIN {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes TOPSWING {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1; } }
+
+@keyframes TOPSWING {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes spread {
+  0% {
+    max-width: 0; }
+  100% {
+    max-width: 100px; } }
+
+@keyframes swipeTop {
+  0% {
+    margin-bottom: -20px;
+    opacity: 0; }
+  100% {
+    margin-bottom: 0;
+    opacity: 1; } }
+
+@keyframes swipeLeft {
+  0% {
+    margin-left: -20px;
+    opacity: 0; }
+  100% {
+    margin-left: 0;
+    opacity: 1; } }
+
+@keyframes swipeBottom {
+  0% {
+    margin-bottom: -20px;
+    opacity: 0; }
+  100% {
+    margin-bottom: 0;
+    opacity: 1; } }
+
+.FADEIN {
+  -webkit-animation: FADEIN 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: FADEIN 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+
+.TOPSWING {
+  -webkit-animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPETOP {
+  -webkit-animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPELEFT {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPEBOTTOM {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SPREAD {
+  -webkit-animation: spread 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: spread 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-family: "Inter", "Poppins", sans-serif;
+  color: var(--dark-1); }
+
+.flex {
+  display: flex; }
+
+.flex_col {
+  display: flex;
+  flex-direction: column; }
+
+.bg {
+  filter: blur(2px); }
+
+a {
+  text-decoration: none; }
+
+.flex {
+  display: flex; }
+
+.flex_col {
+  display: flex;
+  flex-direction: column; }
+
+#GROUP_PAGE {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 0;
+  min-height: 100vh;
+  width: 100%; }
+  #GROUP_PAGE .group_container {
+    border-radius: 8px;
+    opacity: 90%;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: white;
+    width: 90%;
+    max-width: 60rem;
+    padding: 2rem 3rem; }
+    #GROUP_PAGE .group_container:hover {
+      opacity: 100%; }
+    #GROUP_PAGE .group_container .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%; }
+      #GROUP_PAGE .group_container .header .roulette {
+        padding: 0.3rem 2rem;
+        background-color: var(--dark-1);
+        opacity: 90%;
+        border: 2px solid var(--dark-1);
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 1rem; }
+    #GROUP_PAGE .group_container .details {
+      padding: 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: 1rem; }
+
+#GROUP_PAGE .wishlist {
+  justify-content: center; }
+  #GROUP_PAGE .wishlist .line {
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; }
+    #GROUP_PAGE .wishlist .line button {
+      padding: 0.3rem 2rem;
+      background-color: transparent;
+      opacity: 90%;
+      border: 2px solid var(--dark-1);
+      color: var(--dark-1);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: "Plus Jakarta Sans", "Poppins", sans-serif; }
+  #GROUP_PAGE .wishlist .wishlist_box {
+    background-color: white;
+    padding: 1.4rem 1rem;
+    margin: 1rem 0; }
+    #GROUP_PAGE .wishlist .wishlist_box .wishlist_header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center; }
+      #GROUP_PAGE .wishlist .wishlist_box .wishlist_header button {
+        padding: 0.3rem 2rem;
+        background-color: var(--dark-1);
+        opacity: 90%;
+        border: 2px solid var(--dark-1);
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s; }
+    #GROUP_PAGE .wishlist .wishlist_box .wishlist_list {
+      padding: 1rem 0;
+      gap: 0.7rem; }
+      #GROUP_PAGE .wishlist .wishlist_box .wishlist_list .wishlist_item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+        padding: 1rem 1.5rem;
+        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+        border-radius: 5px; }
+        #GROUP_PAGE .wishlist .wishlist_box .wishlist_list .wishlist_item .left i {
+          margin-right: 1.5rem; }
+
+#GROUP_PAGE .members {
+  padding: 1.4rem 1rem;
+  margin: 1rem 0; }
+  #GROUP_PAGE .members .member_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end; }
+    #GROUP_PAGE .members .member_header .title {
+      font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+      font-size: 2.1rem;
+      font-weight: 700; }
+    #GROUP_PAGE .members .member_header .status {
+      font-size: 0.9rem; }
+  #GROUP_PAGE .members .members_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+    margin: 1rem 0; }
+    #GROUP_PAGE .members .members_list .member {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      justify-content: center;
+      gap: 1rem; }
+      #GROUP_PAGE .members .members_list .member img {
+        border-radius: 4px; }
+      #GROUP_PAGE .members .members_list .member .description .name {
+        text-align: center; }
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start center;
+  align-items: stretch;
+  padding: 0.2rem;
+  background-color: white;
+  border-radius: 3px;
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 100px;
+  padding: 0;
+  padding-left: 1rem;
+  overflow: hidden;
+  position: relative; }
+  .searchBar input {
+    border: none;
+    outline: none;
+    flex: 1;
+    background-color: transparent; }
+  .searchBar textarea {
+    width: 100%; }
+  .searchBar input {
+    padding: 0.5rem; }
+  .searchBar .button_wrapper {
+    background-color: var(--dark-1);
+    opacity: 90%;
+    height: 100%;
+    padding: 0.5rem 1.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    .searchBar .button_wrapper i {
+      color: white;
+      margin-right: 0.3rem; }
+    .searchBar .button_wrapper button {
+      height: 100%;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+      font-weight: 600; }
+
+/*# sourceMappingURL=group.css.map */

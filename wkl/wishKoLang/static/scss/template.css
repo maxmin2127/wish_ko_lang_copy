@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dosis:wght@200..800&family=Inter:wght@100..900&family=Kalam:wght@300;400;700&family=Kanit:wght@600&family=Karla:wght@600&family=Kumbh+Sans&family=Lacquer&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300..700&family=Press+Start+2P&family=Roboto&family=Roboto+Slab:wght@700&family=Rock+Salt&family=Rowdies:wght@300;400;700&family=Rubik&family=Rubik+Bubbles&family=Rubik+Doodle+Shadow&family=Syne:wght@400..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dosis:wght@200..800&family=Inter:wght@100..900&family=Kalam:wght@300;400;700&family=Kanit:wght@600&family=Karla:wght@600&family=Kumbh+Sans&family=Lacquer&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300..700&family=Press+Start+2P&family=Roboto&family=Roboto+Slab:wght@700&family=Rock+Salt&family=Rowdies:wght@300;400;700&family=Rubik&family=Rubik+Bubbles&family=Rubik+Doodle+Shadow&family=Syne:wght@400..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+:root {
+  --gray-1: #9F9B9B;
+  --gray-2: #D9D9D9;
+  --dark-1: #333439;
+  --dark-2: #737479;
+  --dark-3: #4C4940;
+  --gold: #E99B26;
+  --peachy: #FFC6BF;
+  --orange: #FF804D;
+  --sunshine: #FFE59B;
+  --pinky-peach: #FDC7C5;
+  --sky: #C4DEEF;
+  --minty: #92FDCB;
+  --grass: #BDFF9D;
+  --rosy: #ED9595;
+  --lavender: #9787AB;
+  --bg-dirty-white: #FFF8EE;
+  --ocean: #A0A5C6;
+  --violet: #7F7FD5;
+  --dark-violet: #4d50a7;
+  --dark-violet-2: #525370;
+  --light-bg:rgba(207, 203, 203, 0.356);
+  --opaque-dark: #33343990; }
+
+@font-face {
+  font-family: "Power Grotesk";
+  src: url("../../font/PowerGrotesk-Regular.ttf"); }
+
+@font-face {
+  font-family: Power Grotesk;
+  src: url("../../font/PowerGrotesk-Regular.ttf"); }
+
+/* TRANSITIONS:
+- FADEIN
+- TOPSWING
+- spread
+*/
+@-webkit-keyframes FADEIN {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes FADEIN {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes TOPSWING {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1; } }
+
+@keyframes TOPSWING {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes spread {
+  0% {
+    max-width: 0; }
+  100% {
+    max-width: 100px; } }
+
+@keyframes swipeTop {
+  0% {
+    margin-bottom: -20px;
+    opacity: 0; }
+  100% {
+    margin-bottom: 0;
+    opacity: 1; } }
+
+@keyframes swipeLeft {
+  0% {
+    margin-left: -20px;
+    opacity: 0; }
+  100% {
+    margin-left: 0;
+    opacity: 1; } }
+
+@keyframes swipeBottom {
+  0% {
+    margin-bottom: -20px;
+    opacity: 0; }
+  100% {
+    margin-bottom: 0;
+    opacity: 1; } }
+
+.FADEIN {
+  -webkit-animation: FADEIN 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: FADEIN 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+
+.TOPSWING {
+  -webkit-animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPETOP {
+  -webkit-animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPELEFT {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPEBOTTOM {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SPREAD {
+  -webkit-animation: spread 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: spread 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-family: "Inter", "Poppins", sans-serif;
+  color: var(--dark-1); }
+
+.flex {
+  display: flex; }
+
+.flex_col {
+  display: flex;
+  flex-direction: column; }
+
+.bg {
+  filter: blur(2px); }
+
+a {
+  text-decoration: none; }
+
+:root {
+  --gray-1: #9F9B9B;
+  --gray-2: #D9D9D9;
+  --dark-1: #333439;
+  --dark-2: #737479;
+  --dark-3: #4C4940;
+  --gold: #E99B26;
+  --peachy: #FFC6BF;
+  --orange: #FF804D;
+  --sunshine: #FFE59B;
+  --pinky-peach: #FDC7C5;
+  --sky: #C4DEEF;
+  --minty: #92FDCB;
+  --grass: #BDFF9D;
+  --rosy: #ED9595;
+  --lavender: #9787AB;
+  --bg-dirty-white: #FFF8EE;
+  --ocean: #A0A5C6;
+  --violet: #7F7FD5;
+  --dark-violet: #4d50a7;
+  --dark-violet-2: #525370;
+  --light-bg:rgba(207, 203, 203, 0.356);
+  --opaque-dark: #33343990; }
+
+@font-face {
+  font-family: "Power Grotesk";
+  src: url("../../font/PowerGrotesk-Regular.ttf"); }
+
+@font-face {
+  font-family: Power Grotesk;
+  src: url("../../font/PowerGrotesk-Regular.ttf"); }
+
+/* TRANSITIONS:
+- FADEIN
+- TOPSWING
+- spread
+*/
+@-webkit-keyframes FADEIN {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes FADEIN {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes TOPSWING {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1; } }
+
+@keyframes TOPSWING {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes spread {
+  0% {
+    max-width: 0; }
+  100% {
+    max-width: 100px; } }
+
+@keyframes swipeTop {
+  0% {
+    margin-bottom: -20px;
+    opacity: 0; }
+  100% {
+    margin-bottom: 0;
+    opacity: 1; } }
+
+@keyframes swipeLeft {
+  0% {
+    margin-left: -20px;
+    opacity: 0; }
+  100% {
+    margin-left: 0;
+    opacity: 1; } }
+
+@keyframes swipeBottom {
+  0% {
+    margin-bottom: -20px;
+    opacity: 0; }
+  100% {
+    margin-bottom: 0;
+    opacity: 1; } }
+
+.FADEIN {
+  -webkit-animation: FADEIN 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: FADEIN 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+
+.TOPSWING {
+  -webkit-animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPETOP {
+  -webkit-animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPELEFT {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPEBOTTOM {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SPREAD {
+  -webkit-animation: spread 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: spread 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-family: "Inter", "Poppins", sans-serif;
+  color: var(--dark-1); }
+
+.flex {
+  display: flex; }
+
+.flex_col {
+  display: flex;
+  flex-direction: column; }
+
+.bg {
+  filter: blur(2px); }
+
+a {
+  text-decoration: none; }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.6rem;
+  position: relative;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px;
+  background-color: #FFFFFF30;
+  box-shadow: rgba(50, 50, 93, 0.5) 0px 2px 5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 5px 20px; }
+  nav .left_nav a {
+    text-decoration: none; }
+    nav .left_nav a .logo {
+      font-family: "Plus Jakarta Sans", "Poppins", sans-serif; }
+  nav .right_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem; }
+    nav .right_nav .list {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 3rem;
+      margin-right: 1rem; }
+      nav .right_nav .list a {
+        text-decoration: none;
+        position: relative; }
+        nav .right_nav .list a li {
+          list-style-type: none;
+          font-family: "Inter", "Poppins", sans-serif;
+          font-family: "Rock Salt", "Poppins", sans-serif;
+          font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+          font-size: 0.65rem;
+          font-size: 0.8rem;
+          font-weight: 600; }
+        nav .right_nav .list a:hover::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: var(--dark-1);
+          border-radius: 10px;
+          bottom: -4px;
+          left: 0;
+          margin-top: 0.2rem;
+          animation: spread 0.3s; }
+  nav a .login_button {
+    padding: 0.3rem 2rem;
+    background-color: var(--dark-1);
+    opacity: 90%;
+    border: 2px solid var(--dark-1);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    transition: background-color 0.4s;
+    font-weight: 600; }
+    nav a .login_button:hover {
+      padding: 0.3rem 2rem;
+      background-color: transparent;
+      opacity: 90%;
+      border: 2px solid var(--dark-1);
+      color: var(--dark-1);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s; }
+  nav a .profile_pic {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 100%; }
+
+main::-webkit-scrollbar {
+  display: none; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex: 1;
+  height: 100vh; }
+
+.main {
+  flex: 1;
+  position: relative; }
+  .main .bg {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0;
+    background-image: url("../images/static_images/background.png");
+    background-image: url("../images/static_images/background-2.png");
+    background-image: url("../images/static_images/background-4.png");
+    background-position: center;
+    background-size: 110%; }
+  .main .content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    overflow-y: scroll; }
+    .main .content::-webkit-scrollbar {
+      display: none; }
+
+/*# sourceMappingURL=template.css.map */

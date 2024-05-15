@@ -1,0 +1,108 @@
+
+{% extends '../layout.html' %}
+
+{% load sass_tags static %}
+
+{% block title %}Open Gifting{% endblock %}
+
+{% block css %}
+<link href="{% sass_src 'scss/pages/openGifting.scss' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <div id="OPENGIFTING_PAGE">
+        <div class="header FADEIN">
+            <h1>Make someone's day happier today</h1>
+            <div class="searchBar">
+                <input type="text" placeholder="Search for organization">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+
+        <section class="organizations">
+            <h1 class="title SWIPETOP">Organizations</h1>
+            <div class="organization_list">
+                {% for org in organizations %}
+                    <a href="{% url 'organization' org.id %}">
+                        <div class="item">
+                            <img src="{{ org.img_url }}">
+                            <div class="description">
+                                <h1>{{ org.name }}</h1>
+                                <p>{{ org.description }}</p>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+
+                <!-- <div class="item">
+                    <img src="https://www.wazzup.ph/wp-content/uploads/2021/03/Bantay-Bata-163-MV-7-1-1.jpg">
+                    <div class="description">
+                        <h1>Bantay Bata 163</h1>
+                        <p>Bantay Bata 163 is a social welfare program of ABS-CBN Lingkod Kapamilya Foundation. Launched in 1997, it aims to protect disadvantaged and at-risk children through a nationwide network of social services.</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://www.wazzup.ph/wp-content/uploads/2021/03/Bantay-Bata-163-MV-7-1-1.jpg">
+                    <div class="description">
+                        <h1>Bantay Bata 163</h1>
+                        <p>Bantay Bata 163 is a social welfare program of ABS-CBN Lingkod Kapamilya Foundation. Launched in 1997, it aims to protect disadvantaged and at-risk children through a nationwide network of social services.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://www.wazzup.ph/wp-content/uploads/2021/03/Bantay-Bata-163-MV-7-1-1.jpg">
+                    <div class="description">
+                        <h1>Bantay Bata 163</h1>
+                        <p>Bantay Bata 163 is a social welfare program of ABS-CBN Lingkod Kapamilya Foundation. Launched in 1997, it aims to protect disadvantaged and at-risk children through a nationwide network of social services.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://www.wazzup.ph/wp-content/uploads/2021/03/Bantay-Bata-163-MV-7-1-1.jpg">
+                    <div class="description">
+                        <h1>Bantay Bata 163</h1>
+                        <p>Bantay Bata 163 is a social welfare program of ABS-CBN Lingkod Kapamilya Foundation. Launched in 1997, it aims to protect disadvantaged and at-risk children through a nationwide network of social services.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://www.wazzup.ph/wp-content/uploads/2021/03/Bantay-Bata-163-MV-7-1-1.jpg">
+                    <div class="description">
+                        <h1>Bantay Bata 163</h1>
+                        <p>Bantay Bata 163 is a social welfare program of ABS-CBN Lingkod Kapamilya Foundation. Launched in 1997, it aims to protect disadvantaged and at-risk children through a nationwide network of social services.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://www.wazzup.ph/wp-content/uploads/2021/03/Bantay-Bata-163-MV-7-1-1.jpg">
+                    <div class="description">
+                        <h1>Bantay Bata 163</h1>
+                        <p>Bantay Bata 163 is a social welfare program of ABS-CBN Lingkod Kapamilya Foundation. Launched in 1997, it aims to protect disadvantaged and at-risk children through a nationwide network of social services.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://www.wazzup.ph/wp-content/uploads/2021/03/Bantay-Bata-163-MV-7-1-1.jpg">
+                    <div class="description">
+                        <h1>Bantay Bata 163</h1>
+                        <p>Bantay Bata 163 is a social welfare program of ABS-CBN Lingkod Kapamilya Foundation. Launched in 1997, it aims to protect disadvantaged and at-risk children through a nationwide network of social services.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://www.wazzup.ph/wp-content/uploads/2021/03/Bantay-Bata-163-MV-7-1-1.jpg">
+                    <div class="description">
+                        <h1>Bantay Bata 163</h1>
+                        <p>Bantay Bata 163 is a social welfare program of ABS-CBN Lingkod Kapamilya Foundation. Launched in 1997, it aims to protect disadvantaged and at-risk children through a nationwide network of social services.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://www.wazzup.ph/wp-content/uploads/2021/03/Bantay-Bata-163-MV-7-1-1.jpg">
+                    <div class="description">
+                        <h1>Bantay Bata 163</h1>
+                        <p>Bantay Bata 163 is a social welfare program of ABS-CBN Lingkod Kapamilya Foundation. Launched in 1997, it aims to protect disadvantaged and at-risk children through a nationwide network of social services.</p>
+                    </div>
+                </div> -->
+
+
+            </div>
+        </section>
+        
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dosis:wght@200..800&family=Inter:wght@100..900&family=Kalam:wght@300;400;700&family=Kanit:wght@600&family=Karla:wght@600&family=Kumbh+Sans&family=Lacquer&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300..700&family=Press+Start+2P&family=Roboto&family=Roboto+Slab:wght@700&family=Rock+Salt&family=Rowdies:wght@300;400;700&family=Rubik&family=Rubik+Bubbles&family=Rubik+Doodle+Shadow&family=Syne:wght@400..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+:root {
+  --gray-1: #9F9B9B;
+  --gray-2: #D9D9D9;
+  --dark-1: #333439;
+  --dark-2: #737479;
+  --dark-3: #4C4940;
+  --gold: #E99B26;
+  --peachy: #FFC6BF;
+  --orange: #FF804D;
+  --sunshine: #FFE59B;
+  --pinky-peach: #FDC7C5;
+  --sky: #C4DEEF;
+  --minty: #92FDCB;
+  --grass: #BDFF9D;
+  --rosy: #ED9595;
+  --lavender: #9787AB;
+  --bg-dirty-white: #FFF8EE;
+  --ocean: #A0A5C6;
+  --violet: #7F7FD5;
+  --dark-violet: #4d50a7;
+  --dark-violet-2: #525370;
+  --light-bg:rgba(207, 203, 203, 0.356);
+  --opaque-dark: #33343990; }
+
+@font-face {
+  font-family: "Power Grotesk";
+  src: url("../../font/PowerGrotesk-Regular.ttf"); }
+
+@font-face {
+  font-family: Power Grotesk;
+  src: url("../../font/PowerGrotesk-Regular.ttf"); }
+
+/* TRANSITIONS:
+- FADEIN
+- TOPSWING
+- spread
+*/
+@-webkit-keyframes FADEIN {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes FADEIN {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes TOPSWING {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1; } }
+
+@keyframes TOPSWING {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes spread {
+  0% {
+    max-width: 0; }
+  100% {
+    max-width: 100px; } }
+
+@keyframes swipeTop {
+  0% {
+    margin-bottom: -20px;
+    opacity: 0; }
+  100% {
+    margin-bottom: 0;
+    opacity: 1; } }
+
+@keyframes swipeLeft {
+  0% {
+    margin-left: -20px;
+    opacity: 0; }
+  100% {
+    margin-left: 0;
+    opacity: 1; } }
+
+@keyframes swipeBottom {
+  0% {
+    margin-bottom: -20px;
+    opacity: 0; }
+  100% {
+    margin-bottom: 0;
+    opacity: 1; } }
+
+.FADEIN {
+  -webkit-animation: FADEIN 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: FADEIN 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+
+.TOPSWING {
+  -webkit-animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPETOP {
+  -webkit-animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPELEFT {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPEBOTTOM {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SPREAD {
+  -webkit-animation: spread 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: spread 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-family: "Inter", "Poppins", sans-serif;
+  color: var(--dark-1); }
+
+.flex {
+  display: flex; }
+
+.flex_col {
+  display: flex;
+  flex-direction: column; }
+
+.bg {
+  filter: blur(2px); }
+
+a {
+  text-decoration: none; }
+
+#FRIENDS_PAGE {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem; }
+  #FRIENDS_PAGE .page_content {
+    width: 90%;
+    max-width: 65rem; }
+    #FRIENDS_PAGE .page_content .header {
+      font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+      font-size: 2.6rem;
+      margin: 1rem; }
+  #FRIENDS_PAGE .your_friends {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+    row-gap: 2rem;
+    padding: 2rem 2rem;
+    overflow-y: scroll;
+    max-height: 50vh; }
+    #FRIENDS_PAGE .your_friends .item {
+      border-radius: 8px;
+      opacity: 90%;
+      cursor: pointer;
+      transition: background-color 0.5s;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0.5rem 0.7rem;
+      gap: 1rem; }
+      #FRIENDS_PAGE .your_friends .item:hover {
+        opacity: 100%; }
+      #FRIENDS_PAGE .your_friends .item img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 8px;
+        opacity: 90%;
+        cursor: pointer;
+        transition: background-color 0.5s;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3); }
+        #FRIENDS_PAGE .your_friends .item img:hover {
+          opacity: 100%; }
+      #FRIENDS_PAGE .your_friends .item .description {
+        width: 60%;
+        height: 100%; }
+        #FRIENDS_PAGE .your_friends .item .description h1 {
+          font-size: 1.3rem;
+          margin: 1rem 0; }
+        #FRIENDS_PAGE .your_friends .item .description p {
+          font-size: 0.9rem;
+          text-align: justify;
+          overflow: ellipsis; }
+  #FRIENDS_PAGE .explore_new_friends {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 3rem;
+    padding: 3rem 2rem;
+    column-gap: 3rem; }
+    #FRIENDS_PAGE .explore_new_friends .item {
+      border-radius: 8px;
+      opacity: 90%;
+      cursor: pointer;
+      transition: background-color 0.5s;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+      gap: 1rem;
+      background-color: white;
+      opacity: 100%; }
+      #FRIENDS_PAGE .explore_new_friends .item:hover {
+        opacity: 100%; }
+      #FRIENDS_PAGE .explore_new_friends .item img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 100%;
+        outline: 5px solid var(--violet);
+        outline-offset: 5px; }
+      #FRIENDS_PAGE .explore_new_friends .item .description {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem; }
+        #FRIENDS_PAGE .explore_new_friends .item .description h1 {
+          font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+          text-align: center;
+          font-size: 1.5rem; }
+        #FRIENDS_PAGE .explore_new_friends .item .description p {
+          font-family: "Inter", "Poppins", sans-serif;
+          text-align: justify;
+          font-size: 0.95rem; }
+      #FRIENDS_PAGE .explore_new_friends .item .checkWishlistButton {
+        padding: 0.3rem 2rem;
+        background-color: var(--violet);
+        opacity: 90%;
+        border: 2px solid var(--violet);
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+        font-weight: 800;
+        opacity: 100%;
+        font-size: 1rem;
+        padding: 0.6rem;
+        width: 100%; }
+        #FRIENDS_PAGE .explore_new_friends .item .checkWishlistButton i {
+          color: white;
+          margin: 0 5px; }
+
+/*# sourceMappingURL=friends.css.map */

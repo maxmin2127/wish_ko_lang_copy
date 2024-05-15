@@ -1,0 +1,82 @@
+{% extends '../../layout.html' %}
+
+{% load sass_tags static %}
+
+{% block title %}Wish Ko Lang{% endblock %}
+
+{% block css %}
+<link href="{% sass_src 'scss/subpages/Initials/setupUser.scss' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <div id="SETUP_PAGE">
+        <div class="setUp_box TOPSWING">
+
+            <h1 class="title">Set up your account</h1>
+            <div class="img_container">
+                <img src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="" width="150" height="150">
+            </div>
+
+            <div class="img_link">
+                <p>Or, input image link</p>
+                <div class="input_link_container">
+                    <i class="fas fa-link"></i>
+                    <input type="link" class="img_link_input"
+                    placeholder="Enter image link">
+                </div>
+            </div>
+
+            <div class="grouped">
+                <div class="input_container">
+                    <label for="">Username</label>
+                    <div class="input_box">
+                        <input type="text" class="username" placeholder="Username">
+                    </div>
+                </div>
+
+                <div class="input_container">
+                    <label for="">Birthday</label>
+                    <div class="input_box">
+                        <input type="text" class="birthday" placeholder="Type birthday">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grouped">
+            <div class="input_container">
+                <label for="">First Name</label>
+                <div class="input_box">
+                    <input type="text" class="fName" placeholder="Type first name">
+                </div>
+            </div>
+            <div class="input_container">
+                <label for="">Last Name</label>
+                <div class="input_box">
+                    <input type="text" class="lName" placeholder="Type last name">
+                </div>
+            </div>
+            <div class="input_container">
+                <label for="">Email Address</label>
+                <div class="input_box">
+                    <input type="text" class="email" placeholder="Type email">
+                </div>
+            </div>
+            </div>
+            
+            <div class="input_container">
+                <label for="">Short description</label>
+                <div class="input_box">
+                    <textarea type="text" class="shortDesc" rows="4" cols="60" placeholder="Type short description"></textarea>
+
+                    
+                </div>
+            </div>
+
+            <div class="button_container">
+                <button class="save_user">Save User</button>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

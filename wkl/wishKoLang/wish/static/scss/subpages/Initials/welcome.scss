@@ -1,0 +1,66 @@
+@import '../../additionals/setup.scss';
+
+
+
+#WELCOME_PAGE {
+    @include flexBox;
+    margin: 4rem 3rem;
+    gap: 2rem;
+    .gift_svg {
+        width: 50rem;
+        max-width: 500px;
+    }
+
+    .text_container {
+        margin: 1rem 2rem;
+        padding: 1rem;
+        
+        
+        .title {
+            // font-family: $heading;
+            color: var(--lavender-2);
+            font-weight: 900;
+            font-size: 5rem;
+            margin-bottom: 0.4rem;
+            font-family: url("../../../font/PowerGrotesk-Regular.ttf");
+            font-family: $heading;
+        }
+        .desc1 {
+            width: 90%;
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+
+            
+            font-family: $ordinary;
+        }
+        .desc2 {
+            width: 90%;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-family: $ordinary;
+        }
+
+        a {
+            .startNow {
+                @include glass;
+                @include button(transparent, var(--dark-1), var(--dark-1));
+                font-family: $mulish;
+                font-family: $raleway;
+                font-weight: 800;
+                font-size: 1.2rem;
+                padding: 0.5rem 4rem;
+                transition: 0.3s;
+
+                &:hover {
+                    @include button(var(--dark-violet-2), var(--dark-violet-2), white);
+                    font-family: $raleway;
+                    font-weight: 800;
+                    font-size: 1.2rem;
+                    padding: 0.5rem 4rem;
+                }
+            }
+        }
+    }
+
+}

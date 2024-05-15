@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dosis:wght@200..800&family=Inter:wght@100..900&family=Kalam:wght@300;400;700&family=Kanit:wght@600&family=Karla:wght@600&family=Kumbh+Sans&family=Lacquer&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300..700&family=Press+Start+2P&family=Roboto&family=Roboto+Slab:wght@700&family=Rock+Salt&family=Rowdies:wght@300;400;700&family=Rubik&family=Rubik+Bubbles&family=Rubik+Doodle+Shadow&family=Syne:wght@400..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+:root {
+  --gray-1: #9F9B9B;
+  --gray-2: #D9D9D9;
+  --dark-1: #333439;
+  --dark-2: #737479;
+  --dark-3: #4C4940;
+  --gold: #E99B26;
+  --peachy: #FFC6BF;
+  --orange: #FF804D;
+  --sunshine: #FFE59B;
+  --pinky-peach: #FDC7C5;
+  --sky: #C4DEEF;
+  --minty: #92FDCB;
+  --grass: #BDFF9D;
+  --rosy: #ED9595;
+  --lavender: #9787AB;
+  --bg-dirty-white: #FFF8EE;
+  --ocean: #A0A5C6;
+  --violet: #7F7FD5;
+  --dark-violet: #4d50a7;
+  --dark-violet-2: #525370;
+  --light-bg:rgba(207, 203, 203, 0.356);
+  --opaque-dark: #33343990; }
+
+@font-face {
+  font-family: "Power Grotesk";
+  src: url("../../font/PowerGrotesk-Regular.ttf"); }
+
+@font-face {
+  font-family: Power Grotesk;
+  src: url("../../font/PowerGrotesk-Regular.ttf"); }
+
+/* TRANSITIONS:
+- FADEIN
+- TOPSWING
+- spread
+*/
+@-webkit-keyframes FADEIN {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes FADEIN {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes TOPSWING {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1; } }
+
+@keyframes TOPSWING {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes spread {
+  0% {
+    max-width: 0; }
+  100% {
+    max-width: 100px; } }
+
+@keyframes swipeTop {
+  0% {
+    margin-bottom: -20px;
+    opacity: 0; }
+  100% {
+    margin-bottom: 0;
+    opacity: 1; } }
+
+@keyframes swipeLeft {
+  0% {
+    margin-left: -20px;
+    opacity: 0; }
+  100% {
+    margin-left: 0;
+    opacity: 1; } }
+
+@keyframes swipeBottom {
+  0% {
+    margin-bottom: -20px;
+    opacity: 0; }
+  100% {
+    margin-bottom: 0;
+    opacity: 1; } }
+
+.FADEIN {
+  -webkit-animation: FADEIN 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: FADEIN 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+
+.TOPSWING {
+  -webkit-animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPETOP {
+  -webkit-animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPELEFT {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPEBOTTOM {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SPREAD {
+  -webkit-animation: spread 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: spread 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-family: "Inter", "Poppins", sans-serif;
+  color: var(--dark-1); }
+
+.flex {
+  display: flex; }
+
+.flex_col {
+  display: flex;
+  flex-direction: column; }
+
+.bg {
+  filter: blur(2px); }
+
+a {
+  text-decoration: none; }
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 1rem; }
+
+#LOGIN_PAGE {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  animation: fadeIn 0.8s; }
+  #LOGIN_PAGE .login_container {
+    border-radius: 8px;
+    opacity: 90%;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: white;
+    padding: 3rem 1.5rem;
+    border-radius: 20px;
+    width: 50%;
+    max-width: 400px;
+    position: relative;
+    animation: swipeTop 0.5s;
+    gap: 1rem;
+    cursor: auto; }
+    #LOGIN_PAGE .login_container:hover {
+      opacity: 100%; }
+    #LOGIN_PAGE .login_container h1 {
+      font-family: "Plus Jakarta Sans", "Poppins", sans-serif; }
+    #LOGIN_PAGE .login_container .input_form {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: 1rem;
+      width: 100%;
+      margin: 0.5rem 0;
+      margin-bottom: 1.3rem; }
+      #LOGIN_PAGE .login_container .input_form .input_container {
+        width: 100%; }
+        #LOGIN_PAGE .login_container .input_form .input_container label {
+          font-size: 0.8rem;
+          margin-bottom: 15px; }
+        #LOGIN_PAGE .login_container .input_form .input_container .input_box {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: stretch;
+          width: 100%;
+          padding: 0.3rem 0.3rem;
+          padding-top: 0.6rem;
+          border-bottom: 2px solid #00000080; }
+          #LOGIN_PAGE .login_container .input_form .input_container .input_box input {
+            flex: 1;
+            height: 100%;
+            font-size: 1rem;
+            margin: 0 1rem;
+            border: none;
+            outline: none;
+            background-color: transparent; }
+    #LOGIN_PAGE .login_container .bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      width: 100%; }
+      #LOGIN_PAGE .login_container .bottom .login_button {
+        padding: 0.3rem 2rem;
+        background-color: var(--dark-1);
+        opacity: 90%;
+        border: 2px solid var(--dark-1);
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 2px;
+        float: right;
+        width: 100%;
+        padding: 0.6rem;
+        align-self: right;
+        font-weight: 700; }
+      #LOGIN_PAGE .login_container .bottom .signup {
+        font-size: 0.8rem; }
+        #LOGIN_PAGE .login_container .bottom .signup a {
+          font-size: 0.8rem;
+          text-decoration: underline; }
+
+/*# sourceMappingURL=login.css.map */

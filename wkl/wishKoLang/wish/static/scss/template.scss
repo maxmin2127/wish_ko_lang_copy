@@ -1,0 +1,68 @@
+
+// layout of the entire page, which includes the general page styling
+
+@import 'additionals/setup.scss';
+@import 'components/navBar.scss';
+
+main {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.container {
+    @include flexBox(column);
+    flex: 1;
+    height: 100vh;
+
+    // &::-webkit-scrollbar {
+    //     display: none;
+    // }
+}
+
+.main {
+    flex: 1;
+    position: relative;
+
+    .bg {
+        // @include glass;
+        position: absolute;
+        // filter: blur(2px);
+        
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 0;
+        background-image: url("../images/static_images/background.png");
+        background-image: url("../images/static_images/background-2.png");
+        background-image: url("../images/static_images/background-4.png");
+        // background-repeat: no-repeat;
+        background-position: center;
+
+        background-size: 110%;
+
+
+        // background-image: url("../images/static_images/background-3.png");
+        // background-size: cover;
+        // background-size: cover;
+        // background-size: 90%;
+        // background-repeat: no-repeat;
+
+    }
+
+    .content {
+
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        
+    }
+
+    
+}

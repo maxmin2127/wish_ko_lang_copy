@@ -1,0 +1,155 @@
+
+{% extends '../../layout.html' %}
+
+{% load sass_tags static %}
+
+{% block title %}{{ org.name }}{% endblock %}
+
+{% block css %}
+<link href="{% sass_src 'scss/subpages/OpenGifting/organization.scss' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <div id="ORGANIZATION_PAGE">
+        <h1 class="org_name">{{ org.name }}</h1>
+        <div class="header">
+            
+            <img class="" src="{{ org.img_url }}" alt="">
+            <div class="description">
+                <p>{{ org.description }}</p>
+            </div>
+        </div>
+
+        <div class="body">
+            <h1 class="body_title">Organization Members</h1>
+            <section class="members">
+                <!-- item list -->
+
+                {% for member in members %}
+                
+                    <div class="item">
+                        <img src="{{ member.img_url }}" class="member_pic">
+                        <div class="description">
+                            <h1>{{ member.name }}</h1>
+                            <p>{{ member.description }}</p>
+                        </div>
+
+                        <a href="{% url 'member' org.id member.id %}">
+                            <button class="checkWishlistButton">
+                                <i class="fas fa-magic"></i>
+                                Check Wishlist
+                            </button>
+                        </a>
+                    </div>
+
+                {% endfor %}
+
+                {% if clicked == True %}
+
+                <!-- show wishlist if clicked is true -->
+                <div class="modal_background">
+                    <div class="modal_container">
+                        
+                        <div class="wishlist_box">
+                            <div class="wishlist_header flex">
+                                <div class="left_header flex">
+                                    <img src="{{ member.img_url }}" class="prof_pic">
+                                    <h1 class="wishlist_owner">{{ member.name }}'s Wishlist</h1>
+                                </div>
+                                    <!-- <button class="flex">
+                                    <i class="fas fa-plus"></i>
+                                    Add
+                                </button> -->
+                                <a href="{% url 'organization' org.id %}">
+                                    <i class="fas fa-xmark" id="close_wishlist"></i>
+                                </a>
+                            </div>
+                            <section class="wishlist_list flex_col">
+                                <div class="wishlist_item">
+                                    <div class="left flex">
+                                        <i class="fas fa-gift"></i>
+                                        <p>Phone</p>
+                                    </div>
+                                    <!-- <div class="magic_square">
+                                        <i class="fas fa-magic"></i>
+                                    </div> -->
+                                </div>
+                                <div class="wishlist_item">
+                                    <div class="left flex">
+                                        <i class="fas fa-gift"></i>
+                                        <p>Phone</p>
+                                    </div>
+                                </div>
+                                <div class="wishlist_item">
+                                    <div class="left flex">
+                                        <i class="fas fa-gift"></i>
+                                        <p>Phone</p>
+                                    </div>
+                                </div>
+                                <div class="wishlist_item">
+                                    <div class="left flex">
+                                        <i class="fas fa-gift"></i>
+                                        <p>Phone</p>
+                                    </div>
+                                </div>
+                                
+                            </section>
+                        </div>
+
+                    </div>
+                </div>
+                {% endif %}
+
+
+
+<!-- 
+
+                <div class="item">
+                    <img src="https://img.freepik.com/free-photo/portrait-little-smiley-boy-outdoor_23-2148852691.jpg" class="member_pic">
+                    <div class="description">
+                        <h1>Juan Tamad</h1>
+                        <p>Juan is a batang tamad na walang tinatagong bato sa kanyang kamay na nahulog sa lupa tinuka ng manok.</p>
+                    </div>
+                    <button class="checkWishlistButton">
+                        <i class="fas fa-magic"></i>
+                        Check Wishlist
+                    </button>
+                </div>
+                <div class="item">
+                    <img src="https://img.freepik.com/free-photo/portrait-little-smiley-boy-outdoor_23-2148852691.jpg" class="member_pic">
+                    <div class="description">
+                        <h1>Juan Tamad</h1>
+                        <p>Juan is a batang tamad na walang tinatagong bato sa kanyang kamay na nahulog sa lupa tinuka ng manok.</p>
+                    </div>
+                    <button class="checkWishlistButton">
+                        <i class="fas fa-magic"></i>
+                        Check Wishlist
+                    </button>
+                </div>
+                <div class="item">
+                    <img src="https://img.freepik.com/free-photo/portrait-little-smiley-boy-outdoor_23-2148852691.jpg" class="member_pic">
+                    <div class="description">
+                        <h1>Juan Tamad</h1>
+                        <p>Juan is a batang tamad na walang tinatagong bato sa kanyang kamay na nahulog sa lupa tinuka ng manok.</p>
+                    </div>
+                    <button class="checkWishlistButton">
+                        <i class="fas fa-magic"></i>
+                        Check Wishlist
+                    </button>
+                </div>
+                <div class="item">
+                    <img src="https://img.freepik.com/free-photo/portrait-little-smiley-boy-outdoor_23-2148852691.jpg" class="member_pic">
+                    <div class="description">
+                        <h1>Juan Tamad</h1>
+                        <p>Juan is a batang tamad na walang tinatagong bato sa kanyang kamay na nahulog sa lupa tinuka ng manok.</p>
+                    </div>
+                    <button class="checkWishlistButton">
+                        <i class="fas fa-magic"></i>
+                        Check Wishlist
+                    </button>
+                </div> -->
+
+            </section>
+        </div>
+    </div>
+{% endblock %}

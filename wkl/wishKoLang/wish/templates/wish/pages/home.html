@@ -1,0 +1,111 @@
+{% extends '../layout.html' %}
+
+{% load sass_tags static %}
+
+{% block title %}Wish Ko Lang{% endblock %}
+
+{% block css %}
+<link href="{% sass_src 'scss/pages/home.scss' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <div id="HOME_PAGE">
+        <!-- <h1>This is the home</h1> -->
+        <section class="header">
+            <h1 class="page_title SWIPETOP">Wish Ko Lang</h1>
+            <div class="subtexts">
+                <h1>Our ultimate destination for seamless gift-giving experiences!</h1>
+                <p>Join our community of dreamers and doers today, and let the magic of Wish Ko lang bring smiles to you and your loved ones, one heartfelt gesture at a time.</p>
+            </div>
+            <!-- <button class="showWishlist">Show your Wishlist</button> -->
+        </section>
+
+        <!-- <div class="motto">
+            Spread joy.
+        </div> -->
+
+        <section class="options flex">
+            <a class="card item" href="{% url 'openGifting' %}">
+                <div class="top">
+                    <img src="{% static 'images/svgs/having-fun-2.svg' %}" alt="" width="200" height="200">
+                </div>
+                <div class="bottom">
+                    <h1>Explore organizations to help</h1>
+                </div>
+            </a>
+            <a class="card item" href="{% url 'secretSanta' %}">
+                <div class="top">
+                    <img src="{% static 'images/svgs/santa-2.svg' %}" alt="" width="200" height="200">
+                </div>
+                <div class="bottom">
+                    <h1>Set up Secret Santas</h1>
+                </div>
+            </a>
+            <a class="card item" href="{% url 'friends' %}">
+                <div class="top">
+                    <img src="{% static 'images/svgs/party-3.svg' %}" alt="" width="200" height="200">
+                </div>
+                <div class="bottom">
+                    <h1>Connect with new people</h1>
+                </div>
+            </a>
+        </section>
+
+        <section class="wishlist">
+            <div class="wishlist_box">
+                <div class="wishlist_header flex">
+                    <h1 class="wishlist_owner">Your Wishlist</h1>
+
+                    <div class="searchBar">
+                        <input type="text" placeholder="Enter item">
+                        <!-- <i class="fas fa-search"></i> -->
+                        <div class="button_wrapper">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <section class="wishlist_list flex_col">
+
+                    {% for item in wishlist_item %}
+                        <div class="wishlist_item">
+                            <div class="left flex">
+                                <i class="fas fa-gift"></i>
+                                <p>{{ item.item_name }}</p>
+                            </div>
+                            <i class="fas fa-xmark"></i>
+                        </div>
+                    {% endfor %}
+
+
+
+                    <!-- <div class="wishlist_item">
+                        <div class="left flex">
+                            <i class="fas fa-gift"></i>
+                            <p>Phone</p>
+                        </div>
+                        <i class="fas fa-xmark"></i>
+                    </div>
+                    <div class="wishlist_item">
+                        <div class="left flex">
+                            <i class="fas fa-gift"></i>
+                            <p>Phone</p>
+                        </div>
+                        <i class="fas fa-xmark"></i>
+                    </div>
+                    <div class="wishlist_item">
+                        <div class="left flex">
+                            <i class="fas fa-gift"></i>
+                            <p>Phone</p>
+                        </div>
+                        <i class="fas fa-xmark"></i>
+                    </div> -->
+
+
+
+                </section>
+            </div>
+        </section>
+
+
+    </div>
+{% endblock %}

@@ -1,0 +1,297 @@
+@import '../../additionals/setup.scss';
+
+.bg {
+    // filter: blur(50px);
+    // filter: blur(10px);
+    // filter: blur(10px);
+    
+}
+
+.content {
+    padding: 1rem 2rem;
+}
+
+#ORGANIZATION_PAGE {
+    @include flexBox(column, flex-start, center);
+    // border: 1px solid black;
+    // @include glass;
+
+    .org_name {
+        font-family: $heading;
+        width: 100%;
+        width: 98%;
+        padding: 1rem 4rem;
+        font-size: 3rem;
+        font-weight: 900;
+        @include semi {
+            text-align: center;
+        }
+    }
+
+    .header {
+        @include flexBox(row, space-between, flex-start);
+        padding: 1rem 4rem;
+        width: 98%;
+        min-height: 50vh;
+        gap: 2rem;
+        position: relative;
+        height: 50vh;
+
+        // @include semi {
+        //     @include flexBox(column, center, center);
+        // }
+
+        img {
+            @include glass;
+            width: 60%;
+            border-radius: 4px;
+            height: 100%;
+            
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            // box-shadow: var(--violet) -7px 7px 2px;
+            // border: 100px;
+            // @include semi {
+            //     width: 100%;
+            // }
+        }
+
+        .description {
+            @include glass;
+            padding: 2rem 1.3rem;
+            background-color: white;
+            max-height: 20rem;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            
+            
+            h1 {
+                font-size: 3rem;
+                font-family: $heading;
+                margin-bottom: 2rem;
+            }
+
+            p {
+                text-overflow: ellipsis;
+            }
+            
+        }
+    }
+
+    .body {
+        width: 100%;
+        padding: 3rem 4rem;
+        .body_title {
+            font-family: $heading;
+        }
+
+        .members {
+            // border: $border;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            row-gap: 3rem;
+            padding: 3rem 2rem;
+            column-gap: 3rem;
+            justify-items: center;
+
+            @include large {
+                grid-template-columns: repeat(3, auto);
+            }
+
+           
+            @include medium {
+                grid-template-columns: repeat(2, auto);
+            }
+
+            @include small {
+                grid-template-columns: repeat(1, auto);
+            }
+
+            .item {
+                @include glass;
+                @include flexBox(column, center, center);
+                padding: 2rem 1rem;
+                gap: 1rem;
+                height: 30rem;
+                background-color: white;
+                opacity: 100%;
+                max-width: 20rem;
+                cursor:auto;
+                // border: 2px solid #00000080;
+                // border: 1px solid var(--lavender);
+                // max-width: ;
+
+                // @include large {
+                //     max-width: 17rem;
+                // }
+    
+                // @include medium {
+                //     max-width: 14rem;
+                // }
+    
+                // @include small {
+                //     max-width: 12rem;
+                // }
+
+                img {
+                    width: 8rem;
+                    height: 8rem;
+                    border-radius: 100%;
+                    outline: 5px solid var(--violet);
+                    outline-offset: 5px;
+                }
+                .description {
+                    @include flexBox(column, flex-start, center);
+                    gap: 1rem;
+                    margin-bottom: 1rem;
+                    h1 {
+                        font-family: $heading;
+                        text-align: center;
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        font-family: $ordinary;
+                        text-align: justify;
+                        font-size: 0.95rem;
+                        
+                        @include ellipsisText(3);
+                    }
+                }
+
+                a {
+                    width: 100%;
+                    .checkWishlistButton {
+                        @include button(var(--violet), var(--violet), white);
+                        font-family: $heading;
+                        font-weight: 800;
+                        opacity: 100%;
+                        font-size: 1rem;
+                        padding: 0.6rem;
+                        width: 100%;
+                        transition: 0.3s;
+                        i {
+                            color: white;
+                            margin: 0 5px;
+                        }
+
+                        &:hover {
+                            @include button(var(--dark-violet), var(--dark-violet), white);
+                            font-family: $heading;
+                            font-weight: 800;
+                            opacity: 100%;
+                            font-size: 1rem;
+                            padding: 0.6rem;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal_background {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    // opacity: 100%;
+    background-color: rgba(0,0,0,0.4);
+    animation: fadeIn 0.5s;
+    @include flexBox(column, center, center);
+
+    .modal_container {
+        width: 50rem;
+        position: absolute;
+        border-radius: 5px;
+        background-color: white;
+        animation: swipeBottom 0.5s;
+
+        #close_wishlist {
+            // position: absolute;
+            // top: 1rem;
+            // right: 1rem;
+            @include opaqueTillHover(30%);
+            font-size: 2rem;
+            margin-right: 1rem;
+
+            
+        }
+        
+        .wishlist_box {
+            margin-top: 1rem;
+            margin-right: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+        
+            background-color: white;
+            padding: 1rem;
+            margin: 1rem 0;
+            .wishlist_header {
+                @include flexBox(row, space-between,center);
+
+                .left_header {
+                    gap: 1.4rem;
+                }
+                .prof_pic {
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: 100%;
+                    outline: 3px solid var(--dark-violet);
+                    outline-offset: 2px;
+
+                }
+
+                .wishlist_owner {
+    
+                }
+        
+                button {
+                    @include button;
+                }
+            }
+    
+            .wishlist_list {
+                padding: 1rem 0;
+                gap: 0.7rem;
+                .wishlist_item {
+                    @include flexBox(row, space-between, center);
+                    // padding: 1rem 1.5rem;
+                    padding: 1rem 1.5rem;
+                    box-shadow: $shadow-5;
+                    border-radius: 5px;
+    
+                    
+                    .left {
+                        i {
+                            margin-right: 1.5rem;
+                        }
+                        p {
+    
+                        }
+                    }
+                    
+                    .magic_square {
+                        background-color: var(--dark-violet);
+                        
+                        
+                        padding: 10px;
+                        border: 2px solid var(--dark-1);
+                        border-radius: 3px;
+                        i {
+                            color: white;
+                            font-size: 4px;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+
+
+}

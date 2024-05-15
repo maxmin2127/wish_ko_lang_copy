@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dosis:wght@200..800&family=Inter:wght@100..900&family=Kalam:wght@300;400;700&family=Kanit:wght@600&family=Karla:wght@600&family=Kumbh+Sans&family=Lacquer&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300..700&family=Press+Start+2P&family=Roboto&family=Roboto+Slab:wght@700&family=Rock+Salt&family=Rowdies:wght@300;400;700&family=Rubik&family=Rubik+Bubbles&family=Rubik+Doodle+Shadow&family=Syne:wght@400..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+:root {
+  --gray-1: #9F9B9B;
+  --gray-2: #D9D9D9;
+  --dark-1: #333439;
+  --dark-2: #737479;
+  --dark-3: #4C4940;
+  --gold: #E99B26;
+  --peachy: #FFC6BF;
+  --orange: #FF804D;
+  --sunshine: #FFE59B;
+  --pinky-peach: #FDC7C5;
+  --sky: #C4DEEF;
+  --minty: #92FDCB;
+  --grass: #BDFF9D;
+  --rosy: #ED9595;
+  --lavender: #9787AB;
+  --bg-dirty-white: #FFF8EE;
+  --ocean: #A0A5C6;
+  --violet: #7F7FD5;
+  --dark-violet: #4d50a7;
+  --dark-violet-2: #525370;
+  --light-bg:rgba(207, 203, 203, 0.356);
+  --opaque-dark: #33343990; }
+
+@font-face {
+  font-family: "Power Grotesk";
+  src: url("../../font/PowerGrotesk-Regular.ttf"); }
+
+@font-face {
+  font-family: Power Grotesk;
+  src: url("../../font/PowerGrotesk-Regular.ttf"); }
+
+/* TRANSITIONS:
+- FADEIN
+- TOPSWING
+- spread
+*/
+@-webkit-keyframes FADEIN {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes FADEIN {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes TOPSWING {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1; } }
+
+@keyframes TOPSWING {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes spread {
+  0% {
+    max-width: 0; }
+  100% {
+    max-width: 100px; } }
+
+@keyframes swipeTop {
+  0% {
+    margin-bottom: -20px;
+    opacity: 0; }
+  100% {
+    margin-bottom: 0;
+    opacity: 1; } }
+
+@keyframes swipeLeft {
+  0% {
+    margin-left: -20px;
+    opacity: 0; }
+  100% {
+    margin-left: 0;
+    opacity: 1; } }
+
+@keyframes swipeBottom {
+  0% {
+    margin-bottom: -20px;
+    opacity: 0; }
+  100% {
+    margin-bottom: 0;
+    opacity: 1; } }
+
+.FADEIN {
+  -webkit-animation: FADEIN 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: FADEIN 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+
+.TOPSWING {
+  -webkit-animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPETOP {
+  -webkit-animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPELEFT {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SWIPEBOTTOM {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.SPREAD {
+  -webkit-animation: spread 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: spread 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-family: "Inter", "Poppins", sans-serif;
+  color: var(--dark-1); }
+
+.flex {
+  display: flex; }
+
+.flex_col {
+  display: flex;
+  flex-direction: column; }
+
+.bg {
+  filter: blur(2px); }
+
+a {
+  text-decoration: none; }
+
+.content {
+  padding: 1rem 2rem; }
+
+#ORGANIZATION_PAGE {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; }
+  #ORGANIZATION_PAGE .org_name {
+    font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+    width: 100%;
+    width: 98%;
+    padding: 1rem 4rem;
+    font-size: 3rem;
+    font-weight: 900; }
+    @media screen and (max-width: 1080px) {
+      #ORGANIZATION_PAGE .org_name {
+        text-align: center; } }
+  #ORGANIZATION_PAGE .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 4rem;
+    width: 98%;
+    min-height: 50vh;
+    gap: 2rem;
+    position: relative;
+    height: 50vh; }
+    #ORGANIZATION_PAGE .header img {
+      border-radius: 8px;
+      opacity: 90%;
+      cursor: pointer;
+      transition: background-color 0.5s;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      width: 60%;
+      border-radius: 4px;
+      height: 100%;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; }
+      #ORGANIZATION_PAGE .header img:hover {
+        opacity: 100%; }
+    #ORGANIZATION_PAGE .header .description {
+      border-radius: 8px;
+      opacity: 90%;
+      cursor: pointer;
+      transition: background-color 0.5s;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 2rem 1.3rem;
+      background-color: white;
+      max-height: 20rem;
+      overflow-y: scroll; }
+      #ORGANIZATION_PAGE .header .description:hover {
+        opacity: 100%; }
+      #ORGANIZATION_PAGE .header .description::-webkit-scrollbar {
+        display: none; }
+      #ORGANIZATION_PAGE .header .description h1 {
+        font-size: 3rem;
+        font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+        margin-bottom: 2rem; }
+      #ORGANIZATION_PAGE .header .description p {
+        text-overflow: ellipsis; }
+  #ORGANIZATION_PAGE .body {
+    width: 100%;
+    padding: 3rem 4rem; }
+    #ORGANIZATION_PAGE .body .body_title {
+      font-family: "Plus Jakarta Sans", "Poppins", sans-serif; }
+    #ORGANIZATION_PAGE .body .members {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      row-gap: 3rem;
+      padding: 3rem 2rem;
+      column-gap: 3rem;
+      justify-items: center; }
+      @media screen and (max-width: 1200px) {
+        #ORGANIZATION_PAGE .body .members {
+          grid-template-columns: repeat(3, auto); } }
+      @media screen and (max-width: 1080px) {
+        #ORGANIZATION_PAGE .body .members {
+          grid-template-columns: repeat(2, auto); } }
+      @media screen and (max-width: 800px) {
+        #ORGANIZATION_PAGE .body .members {
+          grid-template-columns: repeat(1, auto); } }
+      #ORGANIZATION_PAGE .body .members .item {
+        border-radius: 8px;
+        opacity: 90%;
+        cursor: pointer;
+        transition: background-color 0.5s;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 1rem;
+        height: 30rem;
+        background-color: white;
+        opacity: 100%;
+        max-width: 20rem;
+        cursor: auto; }
+        #ORGANIZATION_PAGE .body .members .item:hover {
+          opacity: 100%; }
+        #ORGANIZATION_PAGE .body .members .item img {
+          width: 8rem;
+          height: 8rem;
+          border-radius: 100%;
+          outline: 5px solid var(--violet);
+          outline-offset: 5px; }
+        #ORGANIZATION_PAGE .body .members .item .description {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1rem; }
+          #ORGANIZATION_PAGE .body .members .item .description h1 {
+            font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+            text-align: center;
+            font-size: 1.5rem; }
+          #ORGANIZATION_PAGE .body .members .item .description p {
+            font-family: "Inter", "Poppins", sans-serif;
+            text-align: justify;
+            font-size: 0.95rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis; }
+        #ORGANIZATION_PAGE .body .members .item a {
+          width: 100%; }
+          #ORGANIZATION_PAGE .body .members .item a .checkWishlistButton {
+            padding: 0.3rem 2rem;
+            background-color: var(--violet);
+            opacity: 90%;
+            border: 2px solid var(--violet);
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+            font-weight: 800;
+            opacity: 100%;
+            font-size: 1rem;
+            padding: 0.6rem;
+            width: 100%;
+            transition: 0.3s; }
+            #ORGANIZATION_PAGE .body .members .item a .checkWishlistButton i {
+              color: white;
+              margin: 0 5px; }
+            #ORGANIZATION_PAGE .body .members .item a .checkWishlistButton:hover {
+              padding: 0.3rem 2rem;
+              background-color: var(--dark-violet);
+              opacity: 90%;
+              border: 2px solid var(--dark-violet);
+              color: white;
+              border-radius: 10px;
+              cursor: pointer;
+              transition: 0.3s;
+              font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+              font-weight: 800;
+              opacity: 100%;
+              font-size: 1rem;
+              padding: 0.6rem;
+              width: 100%; }
+
+.modal_background {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .modal_background .modal_container {
+    width: 50rem;
+    position: absolute;
+    border-radius: 5px;
+    background-color: white;
+    animation: swipeBottom 0.5s; }
+    .modal_background .modal_container #close_wishlist {
+      opacity: 30%;
+      transition: 0.3s;
+      cursor: pointer;
+      font-size: 2rem;
+      margin-right: 1rem; }
+      .modal_background .modal_container #close_wishlist:hover {
+        opacity: 100%; }
+    .modal_background .modal_container .wishlist_box {
+      margin-top: 1rem;
+      margin-right: 1rem;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: white;
+      padding: 1rem;
+      margin: 1rem 0; }
+      .modal_background .modal_container .wishlist_box .wishlist_header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; }
+        .modal_background .modal_container .wishlist_box .wishlist_header .left_header {
+          gap: 1.4rem; }
+        .modal_background .modal_container .wishlist_box .wishlist_header .prof_pic {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 100%;
+          outline: 3px solid var(--dark-violet);
+          outline-offset: 2px; }
+        .modal_background .modal_container .wishlist_box .wishlist_header button {
+          padding: 0.3rem 2rem;
+          background-color: var(--dark-1);
+          opacity: 90%;
+          border: 2px solid var(--dark-1);
+          color: white;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: 0.3s; }
+      .modal_background .modal_container .wishlist_box .wishlist_list {
+        padding: 1rem 0;
+        gap: 0.7rem; }
+        .modal_background .modal_container .wishlist_box .wishlist_list .wishlist_item {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 1.5rem;
+          box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+          border-radius: 5px; }
+          .modal_background .modal_container .wishlist_box .wishlist_list .wishlist_item .left i {
+            margin-right: 1.5rem; }
+          .modal_background .modal_container .wishlist_box .wishlist_list .wishlist_item .magic_square {
+            background-color: var(--dark-violet);
+            padding: 10px;
+            border: 2px solid var(--dark-1);
+            border-radius: 3px; }
+            .modal_background .modal_container .wishlist_box .wishlist_list .wishlist_item .magic_square i {
+              color: white;
+              font-size: 4px; }
+
+/*# sourceMappingURL=organization.css.map */

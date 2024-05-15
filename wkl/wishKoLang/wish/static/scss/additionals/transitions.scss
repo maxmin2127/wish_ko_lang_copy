@@ -1,0 +1,133 @@
+// an scss file that stores the transitions
+
+/* TRANSITIONS:
+- FADEIN
+- TOPSWING
+- spread
+*/
+
+@-webkit-keyframes FADEIN {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes FADEIN {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+ @-webkit-keyframes TOPSWING {
+    0% {
+      -webkit-transform: rotateX(-100deg);
+              transform: rotateX(-100deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0deg);
+              transform: rotateX(0deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+      opacity: 1;
+    }
+  }
+  @keyframes TOPSWING {
+    0% {
+      -webkit-transform: rotateX(-100deg);
+              transform: rotateX(-100deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0deg);
+              transform: rotateX(0deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes spread {
+    0% { max-width: 0; }
+    100% { max-width: 100px; }
+  }
+
+  @keyframes swipeTop {
+    0% { 
+      margin-bottom: -20px; 
+      opacity: 0;
+    }
+    100% { 
+      margin-bottom: 0; 
+      opacity: 1;
+    }
+  }
+
+  @keyframes swipeLeft {
+    0% { 
+      margin-left: -20px; 
+      opacity: 0;
+    }
+    100% { 
+      margin-left: 0; 
+      opacity: 1;
+    }
+  }
+
+  @keyframes swipeBottom {
+    0% { 
+      margin-bottom: -20px; 
+      opacity: 0;
+    }
+    100% { 
+      margin-bottom: 0; 
+      opacity: 1;
+    }
+  }
+  
+
+.FADEIN {
+	-webkit-animation: FADEIN 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: FADEIN 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.TOPSWING {
+	-webkit-animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: TOPSWING 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+
+.SWIPETOP {
+  -webkit-animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swipeTop 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+.SWIPELEFT {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+.SWIPEBOTTOM {
+  -webkit-animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swipeLeft 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+.SPREAD {
+  -webkit-animation: spread 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: spread 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}

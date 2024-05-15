@@ -1,0 +1,25 @@
+
+{% extends '../../layout.html' %}
+
+{% load sass_tags static %}
+
+{% block title %}Wish Ko Lang{% endblock %}
+
+{% block css %}
+<link href="{% sass_src 'scss/subpages/Initials/welcome.scss' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <div id="WELCOME_PAGE">
+        <img src="{% static 'images/svgs/gift-svg-violet.svg' %}" class="gift_svg">
+        <div class="text_container">
+            <h1 class="title SWIPELEFT">Wish Ko Lang</h1>
+            <p class="desc1">Your ultimate destination for seamless gift-giving experiences!</p>
+            <p class="desc2">Join our community of dreamers and doers today, and let the magic of Wish Ko lang bring smiles to you and your loved ones, one heartfelt gesture at a time.</p>
+            <!-- <a href="{url 'login'}"> -->
+            <a href="{% url 'login' %}">
+                <button class="startNow">Get Started</button>
+            </a>
+        </div>
+    </div>
+{% endblock %}

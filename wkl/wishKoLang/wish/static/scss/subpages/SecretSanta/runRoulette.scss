@@ -1,0 +1,168 @@
+@import '../../additionals/setup.scss';
+
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+
+
+#RUNROULETTE_PAGE {
+    @include flexBox(column, center, center);
+    margin-top: 2rem;
+
+    .page_content {
+        @include flexBox(column, center, center);
+        width: 80%;
+        max-width: 45rem;
+        padding-bottom: 2rem;
+    }
+
+    .header {
+        @include flexBox(row, space-between, center);
+        width: 100%;
+        .returnButton {
+            @include button;
+            font-family: $heading;
+            font-weight: 600;
+            font-size: 1rem;
+
+            i {
+                color: white;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    .roulette_svg {
+        width: 5rem;
+        height: 5rem;
+        background-image: url("../../../images/svgs/roulette_00001.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 140%;
+        border-radius: 100%;
+        animation: spin 1s  infinite;
+    }
+    
+
+    .randomizer {
+        width: 100%;
+        margin: 2rem 0;
+        
+        h1 {
+            width: 100%;
+            text-align: center;
+            font-family: $heading;
+        }
+
+        .images {
+            margin: 1rem 0;
+            @include flexBox(row, space-around, center);
+
+            
+
+            .card {
+                display: flex;
+                width: 15rem;
+                flex-direction: column;
+                padding: 1rem 1.3rem;
+                @include glass;
+
+                // border: 2px solid black;
+                // justify-content: center;
+                align-items: center;
+                box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+                opacity: 100%;
+                box-shadow: $shadow-1;
+                border: $border-dark;
+                border: 2px solid rgba(0,0,0, 0.3);
+                background-color: white;
+
+                img {
+                    width: 100%;
+                    max-height: 15rem;
+                    border-radius: 5px;
+                }
+
+                h3 {
+                    width: 100%;
+                    text-align: center;
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+
+
+}
+
+#RUNROULETTE_PAGE .wishlist {
+    width: 100%;
+    justify-content: center;
+    .line {
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        
+
+        button {
+            @include button(transparent, var(--dark-1), var(--dark-1));
+            font-family: $heading;
+        }
+    }
+
+    .wishlist_box {
+        // background-color: white;
+        @include glass;
+        // border: $border-dark;
+        padding: 1.4rem 1rem;
+        margin: 1rem 0;
+        background-color: white;
+        border: 2px solid rgba(0,0,0, 0.3);
+        .wishlist_header {
+            @include flexBox(row, space-between,center);
+            .wishlist_owner {
+
+            }
+    
+            button {
+                @include button;
+            }
+        }
+
+        .wishlist_list {
+            padding: 1rem 0;
+            gap: 0.7rem;
+            .wishlist_item {
+                @include flexBox(row, space-between);
+                padding: 1rem 1.5rem;
+                box-shadow: $shadow-5;
+                border-radius: 5px;
+
+                
+                .left {
+                    i {
+                        margin-right: 1.5rem;
+                    }
+                    p {
+
+                    }
+                }
+                
+                i {
+                    
+                }
+            }
+        }
+        
+    }
+
+}

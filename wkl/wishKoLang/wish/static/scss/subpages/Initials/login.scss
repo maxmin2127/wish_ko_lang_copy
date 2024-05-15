@@ -1,0 +1,96 @@
+@import '../../additionals/setup.scss';
+
+
+.content {
+    @include flexBox;
+    padding: 1rem;
+}
+
+#LOGIN_PAGE {
+    // @include glass;
+    @include flexBox(row, center, center);
+    flex: 1;
+    animation: fadeIn 0.8s;
+
+    .login_container {
+        @include glass;
+        @include flexBox(column, flex-start, flex-start);
+        background-color: white;
+        padding: 3rem 1.5rem;
+        border-radius: 20px;
+        width: 50%;
+        max-width: 400px;
+        position: relative;
+        animation: swipeTop 0.5s;
+        gap: 1rem;
+        cursor: auto;
+
+        h1 {
+            font-family: $heading;
+        }
+        
+
+        .input_form {
+            @include flexBox(column);
+            gap: 1rem;
+            width: 100%;
+            margin: 0.5rem 0;
+            margin-bottom: 1.3rem;
+            .input_container {
+                width: 100%;
+                label {
+                    font-size: 0.8rem;
+                    margin-bottom: 15px;
+                }
+                .input_box {
+                    @include flexBox;
+                    width: 100%;
+                    // background-color: red;
+                    padding: 0.3rem 0.3rem;
+                    padding-top: 0.6rem;
+                    border-bottom: 2px solid #00000080;
+                    input {
+                        flex: 1;
+                        height: 100%;
+                        font-size: 1rem;
+                        margin: 0 1rem;
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+                    }
+                }
+            }
+
+        }
+
+        .bottom {
+            @include flexBox(column, flex-start, flex-start);
+            gap: 0.5rem;
+            margin-top: 1rem;
+            width: 100%;
+            .login_button {
+                @include button;
+                border-radius: 2px;
+                float: right;
+                width: 100%;
+                padding: 0.6rem;
+                align-self: right;
+                font-weight: 700;
+
+                // &:hover {
+                //     background-color: var(--dark-violet);
+                // }
+            }
+
+            .signup {
+                font-size: 0.8rem;
+                a {
+                    font-size: 0.8rem;
+                    text-decoration: underline;
+                    // text-decoration: none;
+                }
+            }
+        }
+
+    }
+}
