@@ -13,68 +13,83 @@
         <div class="setUp_box TOPSWING">
 
             <h1 class="title">Set up your account</h1>
-            <div class="img_container">
-                <img src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="" width="150" height="150">
-            </div>
 
-            <div class="img_link">
-                <p>Or, input image link</p>
-                <div class="input_link_container">
-                    <i class="fas fa-link"></i>
-                    <input type="link" class="img_link_input"
-                    placeholder="Enter image link">
+            {% if error_message %}
+            <p class="error-message" style="color: red; font-weight: bold;">{{ error_message }}</p>
+            {% endif %}
+
+
+            <form method="post" action="{% url 'setup'%}">
+                {% csrf_token %}
+
+                <div class="img_container">
+                    <img src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="" width="150" height="150">
                 </div>
-            </div>
 
-            <div class="grouped">
-                <div class="input_container">
-                    <label for="">Username</label>
-                    <div class="input_box">
-                        <input type="text" class="username" placeholder="Username">
+                <div class="img_link">
+                    <p>Or, input image link</p>
+                    <div class="input_link_container">
+                        <i class="fas fa-link"></i>
+                        <input type="link" class="img_link_input"
+                        placeholder="Enter image link" name="profilePicture">
                     </div>
                 </div>
 
-                <div class="input_container">
-                    <label for="">Birthday</label>
-                    <div class="input_box">
-                        <input type="text" class="birthday" placeholder="Type birthday">
+                <div class="grouped">
+                    <div class="input_container">
+                        <label for="">ID</label>
+                        <div class="input_box">
+                            <input type="number" class="username" value="{{ id }}" name="id" readonly>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="grouped">
-            <div class="input_container">
-                <label for="">First Name</label>
-                <div class="input_box">
-                    <input type="text" class="fName" placeholder="Type first name">
-                </div>
-            </div>
-            <div class="input_container">
-                <label for="">Last Name</label>
-                <div class="input_box">
-                    <input type="text" class="lName" placeholder="Type last name">
-                </div>
-            </div>
-            <div class="input_container">
-                <label for="">Email Address</label>
-                <div class="input_box">
-                    <input type="text" class="email" placeholder="Type email">
-                </div>
-            </div>
-            </div>
-            
-            <div class="input_container">
-                <label for="">Short description</label>
-                <div class="input_box">
-                    <textarea type="text" class="shortDesc" rows="4" cols="60" placeholder="Type short description"></textarea>
-
                     
-                </div>
-            </div>
+                    <div class="input_container">
+                        <label for="">Username</label>
+                        <div class="input_box">
+                            <input type="text" class="username" value="{{ username }}" name="username" readonly>
+                        </div>
+                    </div>
 
-            <div class="button_container">
-                <button class="save_user">Save User</button>
-            </div>
+                    <div class="input_container">
+                        <label for="birthday">Birthday</label>
+                        <div class="input_box">
+                            <input type="text" class="birthday" placeholder="Type birthday" name="birthday">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grouped">
+                <div class="input_container">
+                    <label for="firstname">First Name</label>
+                    <div class="input_box">
+                        <input type="text" class="fName" placeholder="Type first name" name="firstname">
+                    </div>
+                </div>
+                <div class="input_container">
+                    <label for="lastname">Last Name</label>
+                    <div class="input_box">
+                        <input type="text" class="lName" placeholder="Type last name" name="lastname">
+                    </div>
+                </div>
+                <div class="input_container">
+                    <label for="emailaddress">Email Address</label>
+                    <div class="input_box">
+                        <input type="text" class="email" placeholder="Type email" name="emailaddress" >
+                    </div>
+                </div>
+                </div>
+                
+                <div class="input_container">
+                    <label for="bio">Short description</label>
+                    <div class="input_box">
+                        <textarea type="text" class="shortDesc" rows="4" cols="60" placeholder="Type short description" name="bio"></textarea>
+                    </div>
+                </div>
+
+                <div class="button_container">
+                    <button class="save_user" type="submit">Save User</button>
+                </div>
+            </form>
 
         </div>
 

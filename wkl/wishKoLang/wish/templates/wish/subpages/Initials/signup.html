@@ -12,32 +12,37 @@
     <div id="LOGIN_PAGE">
         <div class="login_container">
             <h1>Sign Up</h1>
+            
+            {% if error_message %}
+            <p class="error-message" style="color: red; font-weight: bold;">{{ error_message }}</p>
+            {% endif %}
 
-            <form action="" class="input_form">
+            <form method="post" class="input_form" action="{% url 'signup'%}">
+                {% csrf_token %}
                 <div class="input_container">
-                    <label for="">Username</label>
+                    <label for="username">Username</label>
                     <div class="input_box">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username">
+                        <input type="text" placeholder="Username" name="username">
                     </div>
                 </div>
                 <div class="input_container">
-                    <label for="">Password</label>
+                    <label for="password">Password</label>
                     <div class="input_box">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Password" name="password">
                     </div>
                 </div>
                 <div class="input_container">
-                    <label for="">Confirm Password</label>
+                    <label for="confirmPassword">Confirm Password</label>
                     <div class="input_box">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Confirm Password">
+                        <input type="password" placeholder="Confirm Password" name="confirmPassword">
                     </div>
                 </div>
 
                 <div class="bottom">
-                    <button class="login_button">Signup</button>
+                    <button class="login_button" href="{% url 'signup' %}" type="submit">Signup</button>
                     <div class="signup">
                         Already have an account? Login 
                         <a href="{% url 'login' %}">here</a>

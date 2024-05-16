@@ -51,28 +51,40 @@
             </a>
         </section>
 
+
+        <p>{{ wishlist }}</p>
+        
         <section class="wishlist">
             <div class="wishlist_box">
                 <div class="wishlist_header flex">
-                    <h1 class="wishlist_owner">Your Wishlist</h1>
-
-                    <div class="searchBar">
-                        <input type="text" placeholder="Enter item">
-                        <!-- <i class="fas fa-search"></i> -->
-                        <div class="button_wrapper">
+                    <h1 class="wishlist_owner">{{ user.username }}Your Wishlist</h1>
+                    <form action="" class="searchBar">
+                        {% csrf_token %}
+                        <input type="text" placeholder="Enter item" name="item">
+                        
+                        
+                        <button type="submit" class="button_wrapper">
                             <i class="fas fa-plus"></i>
-                        </div>
-                    </div>
+                        </button>
+                    </form>
+                    
                 </div>
                 <section class="wishlist_list flex_col">
 
-                    {% for item in wishlist_item %}
+                    {% for item in wishlist_items %}
                         <div class="wishlist_item">
                             <div class="left flex">
                                 <i class="fas fa-gift"></i>
                                 <p>{{ item.item_name }}</p>
                             </div>
-                            <i class="fas fa-xmark"></i>
+
+                            
+
+                            <form action="{% url 'deleteItem' item.id %}">
+                                <button type="submit">
+                                    <i class="fas fa-xmark"></i>
+                                </button>
+                            </form>
                         </div>
                     {% endfor %}
 

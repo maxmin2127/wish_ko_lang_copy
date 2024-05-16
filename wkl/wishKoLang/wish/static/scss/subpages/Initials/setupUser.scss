@@ -17,6 +17,11 @@
         display: none;
     }
 
+    form {
+        @include flexBox(column, center, center);
+        
+    }
+
     .setUp_box {
         @include glass;
         @include flexBox(column, flex-start, center);

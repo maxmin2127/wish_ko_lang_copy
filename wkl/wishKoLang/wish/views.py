@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from . models import *
 
 from rest_framework.decorators import api_view
+
+username = ""
+
 
 # Create your views here.
 def index(request):
@@ -20,13 +23,13 @@ def login(request):
             username = request.POST.get("username")
             password = request.POST.get("password")
             account = User.objects.get(username=username) # user found, check to see
+            if account.password == password:
+                return render(request, "wish/pages/home.html", {"user":account})
+            else:
+                error_message = 'Incorrect password'
+            return render(request, "wish/subpages/Initials/login.html", {'error_message': error_message})
         except User.DoesNotExist:
             error_message = 'User does not exist'
-            return render(request, "wish/subpages/Initials/login.html", {'error_message': error_message})
-        if account.password == password:
-            return render(request, "wish/pages/home.html")
-        else:
-            error_message = 'Incorrect password'
             return render(request, "wish/subpages/Initials/login.html", {'error_message': error_message})
 
 @api_view(['GET', 'POST'])
@@ -46,7 +49,6 @@ def signup(request):
             return render(request, "wish/subpages/Initials/signup.html", {'error_message': error_message})
         registered = User(username=username, password=password)
         registered.save()
-
         return render(request, "wish/subpages/Initials/setup.html", {"id":registered.id, "username":registered.username})
 
 @api_view(['GET', 'POST'])
@@ -55,7 +57,8 @@ def setup(request):
         return render(request, "wish/subpages/Initials/setup.html")
     if request.method == 'POST':
         id = request.POST.get("id")
-        profilePicture = request.POST.get("username")
+        username = request.POST.get("username")
+        profilePicture = request.POST.get("profilePicture")
         birthday = request.POST.get("birthday")
         firstname = request.POST.get("firstname")
         lastname = request.POST.get("lastname")
@@ -70,19 +73,76 @@ def setup(request):
             account.email = emailaddress
             account.bio = bio
             account.save()
-            print(account)
-            return render(request, "wish/pages/home.html")
+
+            wishlist =  Wishlist(owner=account, title="My Wishlist")
+            wishlist.save()
+            return render(request, "wish/pages/home.html", {"user":account})
         except User.DoesNotExist:
             error_message = 'User does not exist'
             return render(request, "wish/subpages/Initials/setup", {'error_message': error_message})
 
 def home(request):
+    user = User.objects.get(username=username), 
     wishlist = Wishlist.objects.get(owner=user)
+    # user = User.objects.get(username)
     return render(request, "wish/pages/home.html", {
-        "user": user, 
-        "wishlist": wishlist,
-        "wishlist_items" : wishlist.item_in_wishlist.all()
+        "user" : user, 
+        "wishlist": wishlist, 
+        "wishlist_items": wishlist.item_in_wishlist.all()
     })
+    # wishlist = Wishlist.objects.get(owner=user)
+    # return render(request, "wish/pages/home.html", {
+    #     "user": user, 
+    #     "wishlist": wishlist,
+    #     "wishlist_items" : wishlist.item_in_wishlist.all()
+    # })
+
+# def addItem(request):
+#     user = User.objects.get(username=username)
+#     wishlist = Wishlist.objects.get(owner=user)
+
+
+
+def home(request):
+    user = User.objects.get(username=username), 
+    wishlist = Wishlist.objects.get(owner=user)
+    # user = User.objects.get(username)
+    return render(request, "wish/pages/home.html", {
+        "user" : user, 
+        "wishlist": wishlist, 
+        "wishlist_items": wishlist.item_in_wishlist.all()
+    })
+
+
+
+
+# def addItem(request):
+#     user = User.objects.get(username=username)
+#     wishlist = Wishlist.objects.get(owner=user)
+#     if request.method == 'POST':
+#         user = User.objects.get(username=username)
+#         wishlist = Wishlist.objects.get(owner=user)
+#         item_name = request.POST.get("item")
+#         item_to_add = Item(item_name=item_name, wishlist=wishlist)
+#         item_to_add.save()
+#         wishlist.item_in_wishlist.add(item_to_add)
+#         return redirect('home')
+#     else:
+#         return HttpResponse("Invalid Request")
+  
+# def deleteItem(request, item_id):
+#     if request.method == "POST":
+#         try:
+#             instance = Item.objects.get(id=item_id)
+#             instance.delete()
+#             return redirect("home")
+#         except Item.DoesNotExist:
+#             return HttpResponse("Item does not exist.")
+      
+#     else:
+#         return HttpResponse("Invalid Request")
+
+
 
 def openGifting(request):
     context = {
@@ -126,3 +186,4 @@ def runRoulette(request):
 
 def friends(request):
     return render(request, "wish/pages/friends.html");
+

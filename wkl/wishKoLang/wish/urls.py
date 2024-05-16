@@ -17,7 +17,10 @@ urlpatterns = [
     path("openGifting/organization/<int:organization_id>/<int:member_id>", views.member_clicked, name="member"),
     path("secretSanta/create", views.createGroup, name="createGroup"), 
     path("secretSanta/group",  views.group, name="group"), 
-    path("secretSanta/group/runRoulette", views.runRoulette, name="runRoulette")
+    path("secretSanta/group/runRoulette", views.runRoulette, name="runRoulette"), 
+
+    # path("home/addItem", views.addItem, name="addItem"), 
+    # path("home/deleteItem", views.deleteItem, name="deleteItem"), 
 
     
 ]

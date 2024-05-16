@@ -13,6 +13,10 @@
         <div class="login_container">
             <h1>Login</h1>
 
+            {% if error_message %}
+            <p class="error-message" style="color: red; font-weight: bold;">{{ error_message }}</p>
+            {% endif %}
+
             <!-- <div class="input_form">
                 <div class="input_container">
                     <label for="">Username</label>
@@ -36,25 +40,27 @@
                 <div class="signup">No account yet? Signup <a href="">here</a></div>
             </div> -->
 
-            <form action="" class="input_form">
+            <form method="post" action="{% url 'login'%}" class="input_form">
+                {% csrf_token %}
+                
                 <div class="input_container">
-                    <label for="">Username</label>
+                    <label for="username">Username</label>
                     <div class="input_box">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username">
+                        <input type="text" placeholder="Username" name="username">
                     </div>
                 </div>
 
                 <div class="input_container">
-                    <label for="">Password</label>
+                    <label for="password">Password</label>
                     <div class="input_box">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Password" name="password">
                     </div>
                 </div>
 
                 <div class="bottom">
-                    <button class="login_button">Login</button>
+                    <button class="login_button" type="submit">Login</button>
                     <div class="signup">
                         No account yet? Signup <a href="{% url 'signup' %}">here</a>
                     </div>
