@@ -5,6 +5,7 @@ from . models import *
 from rest_framework.decorators import api_view
 
 username = ""
+wishlist_id = ""
 
 
 # Create your views here.
@@ -75,6 +76,7 @@ def setup(request):
             account.save()
 
             wishlist =  Wishlist(owner=account, title="My Wishlist")
+            wishlist_id = wishlist.id
             wishlist.save()
             return render(request, "wish/pages/home.html", {"user":account})
         except User.DoesNotExist:
@@ -83,7 +85,9 @@ def setup(request):
 
 def home(request):
     user = User.objects.get(username=username), 
-    wishlist = Wishlist.objects.get(owner=user)
+    # wishlist = Wishlist.objects.get(owner=user).order_by(id).first()
+    wishlist = Wishlist.objects.get(id=wishlist_id)
+    # print(wishlist)
     # user = User.objects.get(username)
     return render(request, "wish/pages/home.html", {
         "user" : user, 

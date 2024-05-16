@@ -51,22 +51,19 @@
             </a>
         </section>
 
-
-        <p>{{ wishlist }}</p>
-        
         <section class="wishlist">
             <div class="wishlist_box">
                 <div class="wishlist_header flex">
-                    <h1 class="wishlist_owner">{{ user.username }}Your Wishlist</h1>
-                    <form action="" class="searchBar">
+                    <h1 class="wishlist_owner">{{ user.first_name }} Your Wishlist</h1>
+                    <div class="searchBar">
                         {% csrf_token %}
-                        <input type="text" placeholder="Enter item" name="item">
+                        <input type="text" placeholder="Enter item" name="item" id="inputted">
                         
                         
-                        <button type="submit" class="button_wrapper">
+                        <button class="button_wrapper" id="addButton">
                             <i class="fas fa-plus"></i>
                         </button>
-                    </form>
+                    </div>
                     
                 </div>
                 <section class="wishlist_list flex_col">
@@ -80,23 +77,16 @@
 
                             
 
-                            <form action="{% url 'deleteItem' item.id %}">
-                                <button type="submit">
+                            <div>
+                                <button>
                                     <i class="fas fa-xmark"></i>
                                 </button>
-                            </form>
+                            </div>
                         </div>
                     {% endfor %}
 
 
 
-                    <!-- <div class="wishlist_item">
-                        <div class="left flex">
-                            <i class="fas fa-gift"></i>
-                            <p>Phone</p>
-                        </div>
-                        <i class="fas fa-xmark"></i>
-                    </div>
                     <div class="wishlist_item">
                         <div class="left flex">
                             <i class="fas fa-gift"></i>
@@ -107,10 +97,24 @@
                     <div class="wishlist_item">
                         <div class="left flex">
                             <i class="fas fa-gift"></i>
-                            <p>Phone</p>
+                            <p>Car</p>
                         </div>
                         <i class="fas fa-xmark"></i>
-                    </div> -->
+                    </div>
+                    <div class="wishlist_item">
+                        <div class="left flex">
+                            <i class="fas fa-gift"></i>
+                            <p>Good grades</p>
+                        </div>
+                        <i class="fas fa-xmark"></i>
+                    </div>
+                    <div class="wishlist_item">
+                        <div class="left flex">
+                            <i class="fas fa-gift"></i>
+                            <p>Extended Deadline in Trends</p>
+                        </div>
+                        <i class="fas fa-xmark"></i>
+                    </div>
 
 
 
@@ -120,4 +124,31 @@
 
 
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const addButton = document.getElementById('addButton');
+    const wishlistContainer = document.querySelector('.wishlist_list');
+    const itemInput = document.getElementById('inputted');
+
+    addButton.addEventListener('click', () => {
+        const itemName = itemInput.value.trim();
+        if (itemName === "") {
+            alert("Please enter an item name.");
+            return;
+        }
+
+        // Create a new wishlist item div
+        const newItem = document.createElement('div');
+        newItem.className = 'wishlist_item';
+
+        const data = document.createElement('p')
+        data.textContent = itemName;
+
+        // Append the left flex div to the new item div
+        newItem.appendChild(textContent);
+        wishlistContainer.appendChild(newItem);
+    });
+});
+    </script>
 {% endblock %}
